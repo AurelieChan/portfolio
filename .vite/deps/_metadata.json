@@ -1,0 +1,29 @@
+{
+  "hash": "5fa42c07",
+  "browserHash": "c4b3338c",
+  "optimized": {
+    "gsap": {
+      "src": "../../node_modules/gsap/index.js",
+      "file": "gsap.js",
+      "fileHash": "0cb7f381",
+      "needsInterop": false
+    },
+    "three": {
+      "src": "../../node_modules/three/build/three.module.js",
+      "file": "three.js",
+      "fileHash": "8e29beb4",
+      "needsInterop": false
+    },
+    "three/addons/controls/OrbitControls.js": {
+      "src": "../../node_modules/three/examples/jsm/controls/OrbitControls.js",
+      "file": "three_addons_controls_OrbitControls__js.js",
+      "fileHash": "f141223d",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-MBJWT6B4": {
+      "file": "chunk-MBJWT6B4.js"
+    }
+  }
+}

@@ -1,0 +1,998 @@
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background-color: black;
+  font-family: 'Fira Code', monospace;
+  overflow: hidden; 
+}
+
+/* ============================= Disable highlighting in buttons, forms, etc. */
+h1, a, .navls, .grid-container, #contact-section {
+  -webkit-user-select: none; 
+  -moz-user-select: none; 
+  -ms-user-select: none; 
+  user-select: none;
+}
+
+/* ==================================== Change color of highlighting in texts */
+::selection {
+  background-color: rgba(255, 255, 248, 0.55); 
+  color: #313127;
+  text-shadow: 1px 1px 2px rgba(252, 146, 164, 0.7);
+}
+
+/* =================================================================== Navbar */
+nav {
+  position: absolute;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 100%;
+  color: #dfddcc;
+  font-size: 1.2em;
+  overflow: hidden;
+  justify-content: space-around;
+  display: flex;
+}
+
+ .navhp { /* navbar in homepage */
+  transition:all 1s;
+  height: 65px;
+    background-image: linear-gradient(to bottom, rgba(37, 37, 31, 0.8),
+    rgba(37, 37, 31, 0));
+}
+
+.navls { /* navbar in landscape */
+  transition:all 1s;
+  height: 30px;
+  background-color: #25251f;
+}
+
+nav a {
+  position: relative;
+}
+
+nav a:hover {
+  cursor: pointer;
+  color: #ffffd9;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1.8px;
+  top: 30px;
+  left: 0%;
+  background-color: #ffffd9;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+  display: inline-block;
+}
+
+nav a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.active {
+  color: #ffffd9;
+  text-shadow: 0 0 5px #ccffff;
+  transition: all 1s ease;
+}
+
+.active::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(1);
+  height: 1.8px;
+  top: 30px;
+  left: 0%;
+  background-color: #fc92a4;
+}
+
+/* ================================================================ Home Page */
+/* +++++ Name +++++ */
+.name {
+  top: 5%;
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  font-size: clamp(70px, 5vw, 100px);
+}
+
+.name span {
+  font-family: 'Moirai One', cursive;
+  background: -webkit-linear-gradient(#ff0066, #ffffcc);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0;
+  text-shadow: 0 0 7px #FF5050, 0 0 10px #a8b2f4;
+  transition: all 1s ease;
+}
+
+span.fade {
+  opacity: 1;
+}
+
+/* +++++ Home page bottom +++++ */
+.intro {
+  font-size: clamp(27px, 2vw, 35px);
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+}
+
+.fsdev {
+  background: -webkit-linear-gradient(#f55275, #fecac1);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.tags {
+  color: #9e9883;
+}
+
+.top {
+  bottom: 18%;
+}
+
+.from-left {
+  animation: fl 1.8s ease;
+  animation-delay: 1.4s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fl {
+  0% {opacity: 0; transform: translateX(-60%);}
+  100% {opacity: 1; transform: translateX(-50%);}
+}
+
+.bottom {
+  bottom: 14%;
+}
+
+.from-right {
+  animation: fr 1.8s ease;
+  animation-delay: 1.4s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fr {
+  0% {opacity: 0; transform: translateX(-40%);}
+  100% {opacity: 1; transform: translateX(-50%);}
+}
+
+.flags-fade {
+  opacity: 0;
+  animation: fade-in 3s ease;
+  animation-delay: 1.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fade-in {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+.flags {
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  width: 515px;
+}
+
+.flags > img {
+  width: 38px;
+  border-radius: 100%;
+  box-shadow: 0px 0px 15px 1.3px #f2f1e8;
+  transition: transform 0.25s ease-out;
+}
+
+.flags > img:hover {
+  cursor: pointer;
+  box-shadow: 0px 0px 20px 3px #f2f1e8;
+  transform: translateY(-4px);
+}
+
+.germany {
+  margin-right: 165px;
+  margin-left: 165px;
+}
+
+.uk {
+  margin-left: 25px;
+}
+
+/* ================================================================= Sections */
+/* Scroll-bar */
+::-webkit-scrollbar {
+    width: 1.4em;
+}
+::-webkit-scrollbar-thumb {
+    border: 0.5em solid rgba(0, 0, 0, 0);
+    border-radius: 30px;
+    background-clip: padding-box;
+    background-color: rgba(0, 0, 0, 0.45);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(252, 146, 164, 0.55);
+}
+
+section {
+  display: none;
+
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 15px;
+
+  position: absolute;
+  top: 53%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 750px;
+  height: auto;
+  max-height: 80%;
+
+  overflow: auto;
+
+  background: rgba(37, 37, 31, 0.65);
+  border-radius: 10px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.section-fade-in {
+  display: block;
+  animation: fade-in 1s;
+  animation-fill-mode: forwards;
+}
+
+h1 {
+  font-family: 'Moirai One', cursive;
+  font-size: 40px;
+  margin-top: 25px;
+  background: -webkit-linear-gradient(#ff0066, #ffffe3);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  width: auto;
+  max-width: 0%;
+  white-space: nowrap;
+  overflow: hidden;
+
+  animation: title 4s ease;
+  animation-fill-mode: forwards;
+}
+
+@keyframes title {
+  0% {max-width: 0%;}
+  100% {max-width: 100%;}
+}
+
+mark {
+  color: #ffedbe;
+  background-color: rgba(0, 0, 0, 0.0);
+}
+
+/* ++++++++++++++++++++++++++++++++ Projects ++++++++++++++++++++++++++++++++ */
+#projects-section {
+  padding-bottom: 40px;
+  width: auto;
+  max-width: 900px;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+.pro {
+  padding-left: 15px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+
+.grid-item {
+  background-color: rgba(252, 146, 164, 0.6);
+  margin: 12px;
+  text-align: center;
+  transition: transform 0.5s;
+  height: 172px;
+  border-radius: 10px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.25);
+
+  position:relative;
+  overflow:hidden;
+  width: 200px;
+}
+
+.project-pics {
+  height: auto;
+  width: 200px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.grid-item:hover {
+  background-color: rgba(252, 146, 164, 0.85);
+  transform: scale(1.15);
+  cursor: pointer;
+}
+
+/* +++++++++++++++++++++++++++ Individual projects ++++++++++++++++++++++++++ */
+.display-project {
+  display: none;
+  padding-bottom: 40px;
+  max-width: 956px;
+  width: 956px;
+  height: 580px;
+  overflow: hidden;
+}
+
+.title-project {
+  display: inline-block;
+}
+
+.display-project > h1 {
+  margin-left: 5px;
+  margin-bottom: 15px;
+}
+
+.close {
+  float: right;
+  margin-top: 25px;
+  font-size: 40px;
+  background: -webkit-linear-gradient(#ff0066, #e57a92, #ffffff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.presentation {
+  display: grid;
+}
+
+.gif-display {
+  height: auto;
+  width: 535px;
+  border-radius: 10px;
+  margin-left: 5px;
+
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.see-btns {
+  grid-column: 1;
+  grid-row: 2;
+  width: 535px;
+  padding-left: 5px;
+  margin-top: 20px;
+  justify-content: space-around;
+  display: flex;
+}
+
+/* .see-btns > button { */
+.see-btns > a {
+  height: auto !important;
+}
+
+.txt-box {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  color: #fffff8;
+  width: 385px;
+  height: 480px;
+  padding-left: 20px;
+  margin-top: -17px;
+  line-height: 1.6;
+  overflow-y: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 8px;
+  color: #f5c4fc;
+  font-size: 30px;
+  background: -webkit-linear-gradient(#ff0066, #e57a92, #ffffff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.next {
+  right: 0;
+}
+
+.prev {
+  left: 0;
+}
+
+.prev:hover, .next:hover, .close:hover {
+  cursor: pointer;
+  background: -webkit-linear-gradient(#ff6600, #ffffff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ++++++++++++++++++++++++++++++++ About me ++++++++++++++++++++++++++++++++ */
+#about-section {
+  color: #fffff8;
+  line-height: 1.6;
+}
+
+.small-tags {
+  color: #363634;
+}
+
+.links {
+  width: auto;
+  margin-bottom: 10px;
+  justify-content: space-around;
+  display: flex;
+}
+
+.links > a, .see-btns > a {
+  font-family: 'Fira Code', monospace;
+  text-decoration: none;
+  font-size: 0.9em;
+  color: #000000;
+
+  background-image: linear-gradient(to right, rgba(229, 122, 146, 0.7),
+    rgba(255, 255, 255, 0.3));
+  background-color: rgba(255, 204, 153, 0.9);
+
+  box-shadow: 0 1px 40px rgba(0, 0, 0, 0.2);
+
+  height: auto;
+  border: none;
+  padding: 10px;
+  width: auto;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.links > a:hover, .see-btns > a:hover {
+  background-color: #ff9966;
+  transform: scale(1.15);
+}
+
+.github, .linkedin, .youtube {
+  height: 16px;
+  margin-bottom: -3px;
+}
+
+.vtx-link {
+  color: #ff99c2;
+}
+
+.vtx-link:hover{
+  color: #f6b1cc;
+}
+
+/* +++++++++++++++++++++++++++++++++ Contact ++++++++++++++++++++++++++++++++ */
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px transparent;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 10px;
+  resize: vertical;
+  outline: none;
+  border-radius: 10px;
+  background-color: rgba(255, 236, 227, 0.65);
+  box-shadow: 0 1px 40px rgba(0, 0, 0, 0.2);
+  font-family: 'Fira Code', monospace;
+  font-size: 1em;
+  color: #101417;
+  transition: 0.4s;
+}
+
+#message {
+  min-height: 150px;
+  resize: none;
+  overflow: auto;
+}
+
+input:hover, textarea:hover, input:focus, textarea:focus {
+  background-color: rgba(255, 220, 216, 0.9);
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #636a70;
+  opacity: 1; /* Firefox */
+}
+
+.button {
+  font-family: 'Fira Code', monospace;
+  text-align: center;
+  font-size: 1.2em;
+  color: #2a333a;
+  background-image: linear-gradient(to right, rgba(229, 122, 146, 0.5),
+    rgba(255, 255, 255, 0.4));
+  background-color: rgba(255, 204, 153, 0.8);
+  box-shadow: 0 1px 40px rgba(0, 0, 0, 0.2);
+  border: none;
+  padding: 8px;
+  margin-bottom: 30px;
+  width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.button:hover {
+  background-color: #ff9966;
+  color: #000000;
+  transform: scale(1.015);
+}
+
+#sent-msg {
+  font-family: 'Fira Code', monospace;
+  font-size: 1em;
+  color: #ebccad;
+  padding-bottom: 10px;
+  max-width: 750px;
+  display: none;
+}
+
+/* ++++++++++++++++++++++++++++++ MEDIA QUERIES +++++++++++++++++++++++++++++ */
+/* ============================= MEDIA QUERIES LANDSCAPE Desktop and phablets */
+@media only screen and (max-height: 750px) and (orientation: landscape) {
+
+  /* ++++ Section ++++ */
+  h1 {
+    font-size: 35px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  section {
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 75%;
+    max-width: none;
+    font-size: 0.9em;
+  }
+
+  /* ++++ Projects ++++ */
+  .grid-item {
+    width: 190px;
+    height: 162px;
+  }
+
+  .project-pics {
+    width: 190px;
+  }
+
+  /* ++++ Individual Project ++++ */
+  .display-project {
+    height: auto;
+  }
+
+  .display-project > h1 {
+    margin-left: 15px;
+  }
+
+  .close {
+    margin-top: 10px;
+  }
+
+  .gif-display {
+    width: 500px;
+    margin-left: 15px;
+  }
+
+}
+
+@media only screen and (max-height: 600px) and (orientation: landscape) {
+
+  /* ++++ Front page ++++ */
+  nav {
+    font-size: 1em;
+  }
+
+  .name {
+    font-size: clamp(45px, 5vw, 100px);
+    top:7px;
+  }
+
+  .intro {
+    font-size: clamp(16px, 2vw, 35px);
+  }
+
+  .bottom {
+    bottom: 12%;
+  }
+
+  .flags {
+    bottom: 7px;
+    width: 370px;
+  }
+
+  .flags > img {
+    width: 30px;
+  }
+
+  .germany {
+    margin-right: 115px;
+    margin-left: 115px;
+  }
+
+  .uk {
+    margin-left: 16px;
+  }
+
+  /* ++++ Section ++++ */
+  h1 {
+    font-size: 28px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  section {
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 80%;
+    font-size: 0.9em;
+  }
+
+  /* ++++ Contact ++++ */
+  input, textarea {
+    padding: 6px;
+    border-radius: 7px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  #message {
+    min-height: 100px;
+  }
+
+  .button {
+    font-size: 0.9em;
+    padding: 6px;
+    border-radius: 7px;
+    margin-bottom: 15px;
+  }
+}
+
+/* ===================================== MEDIA QUERIES LANDSCAPE small phones */
+@media only screen and (max-height: 440px) and (orientation: landscape) {
+
+  /* ++++ Front page ++++ */
+  .name {
+    font-size: clamp(35px, 5vw, 100px);
+    top:7px;
+  }
+
+  .fsdev, .tags {
+    font-size: 0.6em;
+  }
+
+  .flags {
+    width: 300px;
+  }
+
+  .flags > img {
+    width: 25px;
+  }
+
+  .germany {
+    margin-right: 90px;
+    margin-left: 90px;
+  }
+
+  /* ++++ Section ++++ */
+  h1 {
+    font-size: 25px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  section {
+    font-size: 0.8em;
+  }
+
+  /* ++++ About ++++ */
+  #about-section {
+    font-size: 0.65em;
+  }
+
+  /* ++++ Contact ++++ */
+  input, textarea {
+    padding: 3px;
+    border-radius: 5px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+  }
+
+  #message {
+    min-height: 70px;
+  }
+
+  .button {
+    font-size: 0.9em;
+    padding: 4px;
+    border-radius: 5px;
+    margin-bottom: 2px;
+  }
+}
+
+/* ======================================== MEDIA QUERIES LANDSCAPE too small */
+@media only screen and (max-height: 350px) and (orientation: landscape) {
+
+  /* ++++ Front page ++++ */
+  .fsdev, .tags, .flags > img, .display-project {
+    opacity: 0;
+  }
+
+  #contact-section, #about-section, #projects-section {
+    display: none;
+  }
+}
+
+/* =================================================== MEDIA QUERIES PORTRAIT */
+/* ============================================ MEDIA QUERIES 1065 (projects) */
+@media only screen and (max-width: 1065px) {
+
+  .display-project {
+    max-width: 800px;
+    width: 800px;
+    overflow-y: auto;
+  }
+
+  .title-project {
+    padding-left: 30px;
+  }
+
+  .gif-display {
+    width: 90%;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .see-btns {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .txt-box {
+    grid-column: 1;
+    grid-row: 2;
+    width: 90%;
+    height: auto;
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    padding: 0;
+  }
+
+  .next {
+    right: -3px;
+  }
+
+}
+
+/* ============================================ MEDIA QUERIES 850 (projects) */
+@media only screen and (max-width: 850px) {
+
+  .grid-container {
+    grid-template-columns: auto auto;
+  }
+
+  .presentation {
+    grid-template-columns: auto;
+    scrollbar-gutter: stable both-edges;
+  }
+
+  .title-project {
+    padding-left: 0;
+  }
+
+  .display-project {
+    max-width: auto;
+    width: auto;
+    height: 65vh;
+    padding: 30px;
+  }
+
+  .txt-box {
+    width: 70vw;
+  }
+
+  .gif-display {
+    width: 70vw;
+  }
+
+  /* Next & previous buttons */
+  .prev, .next {
+    padding: 4px;
+    margin-top: 0;
+  }
+
+  .next {
+    right: 0;
+  }
+
+  .prev {
+    left: 0;
+  }
+}
+
+/* ======================================================== MEDIA QUERIES 665 */
+@media only screen and (max-width: 665px) {
+
+  .intro {
+    font-size: 22px;
+  }
+
+}
+
+/* ======================================================== MEDIA QUERIES 580 */
+@media only screen and (max-width: 580px) {
+
+  /* ++++ Front page ++++ */
+  nav {
+    font-size: 16px;
+  }
+
+  .name {
+    font-size: clamp(45px, 5vw, 100px);
+  }
+
+  .intro {
+    font-size: 16px;;
+  }
+
+  .flags {
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    width: 300px;
+  }
+
+  .flags > img {
+    width: 30px;
+  }
+
+  .germany {
+    margin-right: 80px;
+    margin-left: 80px;
+  }
+
+  .uk {
+    margin-left: 16px;
+  }
+
+  /* ++++ Section ++++ */
+  h1 {
+    font-size: 28px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  section {
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 80%;
+    font-size: 0.9em;
+  }
+
+  /* ++++ Projects ++++ */
+  .grid-container {
+    grid-template-columns: auto;
+  }
+
+  .grid-item {
+    width: 280px;
+    height: 200px;
+    margin: 12px 5 12px 5;
+  }
+
+  .project-pics {
+    width: 280px;
+  }
+
+  .title-project {
+    font-size: 28px;
+  }
+
+  .close {
+    margin-top: 10px;
+    font-size: 30px;
+  }
+
+  .see-btns > a, .links > a {
+    padding: 7px;
+  }
+
+  /* ++++ About ++++ */
+  .github, .linkedin, .youtube {
+    height: 13px;
+  }
+
+  /* ++++ Contact ++++ */
+  input, textarea {
+    padding: 6px;
+    border-radius: 7px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  #message {
+    min-height: 100px;
+  }
+
+  .button {
+    font-size: 0.9em;
+    padding: 6px;
+    border-radius: 7px;
+    margin-bottom: 15px;
+  }
+
+}
+
+/* ======================================================== MEDIA QUERIES 500 */
+@media only screen and (max-width: 500px) {
+
+  .title-project {
+    font-size: 24px;
+  }
+
+}
+
+/* ======================================================== MEDIA QUERIES 380 */
+
+@media only screen and (max-width: 380px) {
+
+  /* ++++ Front page ++++ */
+  nav, p, .see-btns {
+    font-size: 13px;
+  }
+
+  .name {
+    font-size: clamp(38px, 5vw, 100px);
+  }
+
+  .intro {
+    font-size: 13px;
+  }
+
+  /* ++++ Projects ++++ */
+  .title-project {
+    font-size: 22px;
+  }
+
+  .grid-item {
+    width: 220px;
+    height: 170px;
+  }
+
+  .project-pics {
+    width: 220px;
+  }
+
+}
