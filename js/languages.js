@@ -74,6 +74,10 @@ const languages = {
 
     // ============================================================ Contact - EN
     "con-title": "Contact",
+
+    "errorName": "Please enter your name.",
+    "errorEmail": "Please enter your email address.",
+    "errorMessage": "Your message is empty."
   },
 
 
@@ -151,6 +155,10 @@ const languages = {
 
     // ============================================================ Contact - DE
     "con-title": "Kontakt",
+
+    "errorName": "Bitte geben Sie Ihren Namen ein.",
+    "errorEmail": "Bitte geben Sie Ihre E-Mail-Adresse ein.",
+    "errorMessage": "Ihre Nachricht ist leer."
   },
 
 
@@ -228,6 +236,10 @@ const languages = {
 
     // ============================================================ Contact - FR
     "con-title": "Contact",
+
+    "errorName": "Veuillez entrer votre nom.",
+    "errorEmail": "Veuillez entrer votre adresse e-mail.",
+    "errorMessage": "Votre message est vide."
   }
 }
 
