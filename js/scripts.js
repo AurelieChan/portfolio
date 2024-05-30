@@ -29,48 +29,79 @@ function closeDetails(project) {
   document.querySelector('#projects-section').style.opacity = 1;
 }
 
+// ================================================= Detect subdomain (language)
+
+function getSubdomain() {
+  var hostname = window.location.hostname;
+  var parts = hostname.split('.');
+  var subdomain = parts[0]; // en, de or fr
+
+  // Check if www or only 2 parts, as example.de 
+  if (subdomain === 'www' || parts.length < 3) {
+      subdomain = null; 
+  }
+  return subdomain;
+}
+
 // =================================================================== Languages
 
-// get user's navigator default language
-var navLang = localStorage.getItem('lang') || navigator.language.slice(0, 2);
+// // get user's navigator default language
+// var navLang = localStorage.getItem('lang') || navigator.language.slice(0, 2);
 
-// check if navLang is in the languages library, else put english as default
-if (Object.keys(languages).includes(navLang)) {
-  selectLanguage(navLang)
-}
-else {
-  selectLanguage('en')
-}
+// // check if navLang is in the languages library, else put english as default
+// if (Object.keys(languages).includes(navLang)) {
+//   selectLanguage(navLang)
+// }
+// else {
+//   selectLanguage('en')
+// }
+
+document.addEventListener('DOMContentLoaded', function() {
+  var subdomain = getSubdomain();
+  if (subdomain && ['en', 'de', 'fr'].includes(subdomain)) { 
+      selectLanguage(subdomain);
+  } else {
+      selectLanguage('en');
+  }
+});
 
 function selectLanguage(lan) {
-  var translate = document.getElementsByClassName('lang');
+  var currentURL = window.location.href;
+  var baseURL = currentURL.replace(window.location.hostname, lang + '.example.com');
+  window.location.href = baseURL;
+  // var translate = document.getElementsByClassName('lang');
 
-  // Translate each sentence of the website
-  Array.prototype.forEach.call(translate, function(el, index, array){
-    let key = el.getAttribute('key')
-    el.innerHTML = languages[lan][key];
-  });
+  // // Translate each sentence of the website
+  // Array.prototype.forEach.call(translate, function(el, index, array){
+  //   let key = el.getAttribute('key')
+  //   el.innerHTML = languages[lan][key];
+  // });
 
-  // Save preference in the localStorage
-  localStorage.setItem('lang', lan)
+  // // Save preference in the localStorage
+  // localStorage.setItem('lang', lan)
 
-  // Translate placeholder of the contact form
-  contactPlaceholder(lan)
+  // // Translate placeholder of the contact form
+  // contactPlaceholder(lan)
 }
 
 // ================================================================ Contact form
 
 function submitForm() {
+
+  var lang = localStorage.getItem('lang') || navigator.language.slice(0, 2);
+  var errorMsgEmail = languages[lang]["errorEmail"];
+  var errorMsgMessage = languages[lang]["errorMessage"];
+
   if(!document.querySelector("#name").value) {
-    document.querySelector('#sent-msg').textContent = 'Please enter your name.';
+    document.querySelector('#sent-msg').textContent = errorMsgName;
     document.querySelector('#sent-msg').style.display = 'block';
   }
   else if(!document.querySelector("#email").value) {
-    document.querySelector('#sent-msg').textContent = 'Please enter your email address.';
+    document.querySelector('#sent-msg').textContent = errorMsgEmail;
     document.querySelector('#sent-msg').style.display = 'block';
   }
   else if(!document.querySelector("#message").value) {
-    document.querySelector('#sent-msg').textContent = 'Your message is empty.';
+    document.querySelector('#sent-msg').textContent = errorMsgMessage;
     document.querySelector('#sent-msg').style.display = 'block';
   }
   else {
