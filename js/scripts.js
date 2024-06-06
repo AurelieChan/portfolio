@@ -1,5 +1,44 @@
-// ==================================================================== Projects
+import { languages, contactPlaceholder } from './languages.js';
 
+// ============================================================= Event listeners
+document.addEventListener('DOMContentLoaded', () => {
+  const showProject = document.querySelectorAll('.grid-item, .prev, .next');
+  showProject.forEach(item => {
+    item.addEventListener('click', () => {
+      const project = item.getAttribute('data-project-id');
+      details(project);
+    });
+  });
+
+  const closeButtons = document.querySelectorAll('.close');
+  closeButtons.forEach(closeButton => {
+      closeButton.addEventListener('click', () => {
+          const project = closeButton.getAttribute('data-close-id');
+          closeDetails(project);
+      });
+  });
+
+  const langButtons = ['en', 'de', 'fr'];
+  langButtons.forEach(lang => {
+      document.getElementById(lang).addEventListener('click', () => selectLanguage(lang));
+  });
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var subdomain = getSubdomain();
+    if (subdomain && ['en', 'de', 'fr'].includes(subdomain)) { 
+        selectLanguage(subdomain);
+    } else {
+        selectLanguage('en');
+    }
+  });
+
+  const submitButton = document.getElementById('submit');
+  if (submitButton) {
+      submitButton.addEventListener('click', submitForm);
+  }
+});
+
+// ==================================================================== Projects
 function details(project) {
 
   const projectWindow = document.querySelectorAll(".display-project");
@@ -30,7 +69,6 @@ function closeDetails(project) {
 }
 
 // ================================================= Detect subdomain (language)
-
 function getSubdomain() {
   var hostname = window.location.hostname;
   var parts = hostname.split('.');
@@ -44,51 +82,20 @@ function getSubdomain() {
 }
 
 // =================================================================== Languages
-
-// // get user's navigator default language
-// var navLang = localStorage.getItem('lang') || navigator.language.slice(0, 2);
-
-// // check if navLang is in the languages library, else put english as default
-// if (Object.keys(languages).includes(navLang)) {
-//   selectLanguage(navLang)
-// }
-// else {
-//   selectLanguage('en')
-// }
-
-document.addEventListener('DOMContentLoaded', function() {
-  var subdomain = getSubdomain();
-  if (subdomain && ['en', 'de', 'fr'].includes(subdomain)) { 
-      selectLanguage(subdomain);
-  } else {
-      selectLanguage('en');
-  }
-});
-
-function selectLanguage(lan) {
+export function selectLanguage(lan) {
   var currentURL = window.location.href;
-  var baseURL = currentURL.replace(window.location.hostname, lang + '.example.com');
+  var baseURL = currentURL.replace(window.location.hostname, lan + '.aureliechan.de');
   window.location.href = baseURL;
-  // var translate = document.getElementsByClassName('lang');
 
-  // // Translate each sentence of the website
-  // Array.prototype.forEach.call(translate, function(el, index, array){
-  //   let key = el.getAttribute('key')
-  //   el.innerHTML = languages[lan][key];
-  // });
-
-  // // Save preference in the localStorage
-  // localStorage.setItem('lang', lan)
-
-  // // Translate placeholder of the contact form
-  // contactPlaceholder(lan)
+  // Translate placeholder of the contact form
+  contactPlaceholder(lan)
 }
 
 // ================================================================ Contact form
-
 function submitForm() {
 
   var lang = localStorage.getItem('lang') || navigator.language.slice(0, 2);
+  var errorMsgName = languages[lang]["errorName"];
   var errorMsgEmail = languages[lang]["errorEmail"];
   var errorMsgMessage = languages[lang]["errorMessage"];
 
@@ -136,8 +143,6 @@ function submitForm() {
         }, 5000);
 
       }
-
     }
-
   }
 }

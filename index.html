@@ -16,6 +16,8 @@
     <title>Aurélie Chan Portfolio</title>
 
     <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/languages.js"></script>
+    <script type="module" src="js/scripts.js"></script>
 
   </head>
 
@@ -44,9 +46,9 @@
     </p>
 
     <div class="flags flags-fade">
-      <img src="pics/flags/uk.png" alt="UK flag" id='en' class='uk' onClick='selectLanguage("en")'>
-      <img src="pics/flags/germany.png" alt="german flag" id='de' class='germany' onClick='selectLanguage("de")'>
-      <img src="pics/flags/france.png" alt="french flag" id='fr' class='france' onClick='selectLanguage("fr")'>
+      <img src="pics/flags/uk.png" alt="UK flag" id='en' class='uk'>
+      <img src="pics/flags/germany.png" alt="german flag" id='de' class='germany'>
+      <img src="pics/flags/france.png" alt="french flag" id='fr' class='france'>
     </div>
 
 <!-- Project section -->
@@ -57,35 +59,35 @@
       <p class='lang pro' key='pro-intro'>Click on the projects below to see more details.</p>
 
       <div class="grid-container">
-        <div class="grid-item" onclick="details('vortext')">
+        <div class="grid-item" data-project-id="vortext">
           <p class='lang' key='qa0'>VortexT</p>
           <img src="pics/projects/vortext.png" alt="vortext" class='project-pics'>
         </div>
-        <div class="grid-item" onclick="details('scientist')">
+        <div class="grid-item" data-project-id="scientist">
           <p class='lang' key='pro0'>Professional Profile</p>
           <img src="pics/projects/scientist.png" alt="scientist" class='project-pics'>
         </div>
-        <div class="grid-item" onclick="details('retrofun')">
+        <div class="grid-item" data-project-id="retrofun">
           <p class='lang' key='ret0'>Retrofun Games</p>
           <img src="pics/projects/retrofun.png" alt="retrofun" class='project-pics'>
         </div>
-        <div class="grid-item" onclick="details('portfolio')">
+        <div class="grid-item" data-project-id="portfolio">
           <p class='lang' key='por0'>My Portfolio</p>
           <img src="pics/projects/portfolio.png" alt="portfolio" class='project-pics'>
         </div>
-        <div class="grid-item" onclick="details('chatter')">
+        <div class="grid-item" data-project-id="chatter">
           <p class='lang' key='sm0'>Social Media</p>
           <img src="pics/projects/chatter.png" alt="chatter" class='project-pics'>
         </div>
-        <div class="grid-item" onclick="details('mail')">
+        <div class="grid-item" data-project-id="mail">
           <p class='lang' key='mb0'>Mail Box</p>
           <img src="pics/projects/mail.png" alt="portfolio" class='project-pics'>
         </div>
-        <div class="grid-item" onclick="details('auction')">
+        <div class="grid-item" data-project-id="auction">
           <p class='lang' key='auc0'>Auction Site</p>
           <img src="pics/projects/auction.png" alt="auction" class='project-pics'>
         </div>
-        <div class="grid-item" onclick="details('wiki')">
+        <div class="grid-item" data-project-id="wiki">
           <p class='lang' key='wb0'>Wiki Beer</p>
           <img src="pics/projects/wiki.png" alt="wiki" class='project-pics'>
         </div>
@@ -99,7 +101,7 @@
 
       <section id="vortext" class='display-project'>
         <h1 class='title-project lang' key='qa0'>VortexT</h1>
-        <span class="close" onclick="closeDetails('vortext')">&#10005;</span>
+        <span class="close" data-close-id="vortext">&#10005;</span>
 
         <div class="presentation">
           <div>
@@ -134,13 +136,13 @@
         </div>
 
         <!-- Next and previous buttons -->
-        <a class="prev" onclick="details('wiki')">&#10094;</a>
-        <a class="next" onclick="details('scientist')">&#10095;</a>
+        <a class="prev" data-project-id="wiki">&#10094;</a>
+        <a class="next" data-project-id="scientist">&#10095;</a>
       </section>
 
       <section id="scientist" class='display-project'>
         <h1 class='title-project lang' key='pro0'>Professional Profile</h1>
-        <span class="close" onclick="closeDetails('scientist')">&#10005;</span>
+        <span class="close" data-close-id="scientist">&#10005;</span>
 
         <div class="presentation">
 
@@ -175,14 +177,14 @@
         </div>
 
         <!-- Next and previous buttons -->
-        <a class="prev" onclick="details('vortext')">&#10094;</a>
-        <a class="next" onclick="details('retrofun')">&#10095;</a>
+        <a class="prev" data-project-id="vortext">&#10094;</a>
+        <a class="next" data-project-id="retrofun">&#10095;</a>
 
       </section>
 
       <section id="retrofun" class='display-project'>
         <h1 class='title-project lang' key='ret0'>Retrofun Games</h1>
-        <span class="close" onclick="closeDetails('retrofun')">&#10005;</span>
+        <span class="close" data-close-id="retrofun">&#10005;</span>
 
         <div class="presentation">
 
@@ -217,14 +219,14 @@
         </div>
 
         <!-- Next and previous buttons -->
-        <a class="prev" onclick="details('scientist')">&#10094;</a>
-        <a class="next" onclick="details('portfolio')">&#10095;</a>
+        <a class="prev" data-project-id="scientist">&#10094;</a>
+        <a class="next" data-project-id="portfolio">&#10095;</a>
 
       </section>
 
       <section id="portfolio" class='display-project'>
         <h1 class='title-project lang' key='por0'>My Portfolio</h1>
-        <span class="close" onclick="closeDetails('portfolio')">&#10005;</span>
+        <span class="close" data-close-id="portfolio">&#10005;</span>
 
         <div class="presentation">
 
@@ -259,14 +261,14 @@
         </div>
 
         <!-- Next and previous buttons -->
-        <a class="prev" onclick="details('retrofun')">&#10094;</a>
-        <a class="next" onclick="details('chatter')">&#10095;</a>
+        <a class="prev" data-project-id="retrofun">&#10094;</a>
+        <a class="next" data-project-id="chatter">&#10095;</a>
 
       </section>
 
       <section id="chatter" class='display-project'>
         <h1 class='title-project lang' key='sm0'>Social Media</h1>
-        <span class="close" onclick="closeDetails('chatter')">&#10005;</span>
+        <span class="close" data-close-id="chatter">&#10005;</span>
 
         <div class="presentation">
           <div>
@@ -301,14 +303,14 @@
         </div>
 
         <!-- Next and previous buttons -->
-        <a class="prev" onclick="details('portfolio')">&#10094;</a>
-        <a class="next" onclick="details('mail')">&#10095;</a>
+        <a class="prev" data-project-id="portfolio">&#10094;</a>
+        <a class="next" data-project-id="mail">&#10095;</a>
 
       </section>
 
       <section id="mail" class='display-project'>
         <h1 class='title-project lang' key='mb0'>Mail Box</h1>
-        <span class="close" onclick="closeDetails('mail')">&#10005;</span>
+        <span class="close" data-close-id="mail">&#10005;</span>
 
         <div class="presentation">
 
@@ -344,14 +346,14 @@
         </div>
 
         <!-- Next and previous buttons -->
-        <a class="prev" onclick="details('chatter')">&#10094;</a>
-        <a class="next" onclick="details('auction')">&#10095;</a>
+        <a class="prev" data-project-id="chatter">&#10094;</a>
+        <a class="next" data-project-id="auction">&#10095;</a>
 
       </section>
 
       <section id="auction" class='display-project'>
         <h1 class='title-project lang' key='auc0'>Auction Site</h1>
-        <span class="close" onclick="closeDetails('auction')">&#10005;</span>
+        <span class="close" data-close-id="auction">&#10005;</span>
 
         <div class="presentation">
 
@@ -388,14 +390,14 @@
         </div>
 
         <!-- Next and previous buttons -->
-        <a class="prev" onclick="details('mail')">&#10094;</a>
-        <a class="next" onclick="details('wiki')">&#10095;</a>
+        <a class="prev" data-project-id="mail">&#10094;</a>
+        <a class="next" data-project-id="wiki">&#10095;</a>
 
       </section>
 
       <section id="wiki" class='display-project'>
         <h1 class='title-project lang' key='wb0'>Wiki Beer</h1>
-        <span class="close" onclick="closeDetails('wiki')">&#10005;</span>
+        <span class="close" data-close-id="wiki">&#10005;</span>
 
         <div class="presentation">
 
@@ -433,8 +435,8 @@
         </div>
 
         <!-- Next and previous buttons -->
-        <a class="prev" onclick="details('auction')">&#10094;</a>
-        <a class="next" onclick="details('vortext')">&#10095;</a>
+        <a class="prev" data-project-id="auction">&#10094;</a>
+        <a class="next" data-project-id="vortext">&#10095;</a>
 
       </section>
 
@@ -481,14 +483,12 @@
         <input id="email" name="email" maxlength="100" placeholder="E-mail Address">
         <textarea id="message" name="message" maxlength="3000" placeholder="Your message"></textarea>
         <div id="sent-msg"></div>
-        <input type="button" onclick="submitForm();" data-inviewport="animtxt" class="button link1" id="submit" value="Submit">
+        <input type="button" data-inviewport="animtxt" class="button link1" id="submit" value="Submit">
       </form>
 
     </section>
 
   </body>
 
-  <script type="text/javascript" src="js/languages.js"></script>
-  <script type="text/javascript" src="js/scripts.js"></script>
-
 </html>
+

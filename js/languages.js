@@ -1,4 +1,4 @@
-const languages = {
+export const languages = {
 
   'en': {
     // =============================================================== Home - EN
@@ -245,7 +245,7 @@ const languages = {
 
 
 // Translate placeholder of the contact form
-function contactPlaceholder(lan) {
+export function contactPlaceholder(lan) {
   if (lan === 'en') {
     document.getElementsByName('name')[0].placeholder='Name';
     document.getElementsByName('company')[0].placeholder='Company (optional)';

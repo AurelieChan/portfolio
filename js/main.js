@@ -2,7 +2,10 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import gsap from 'gsap';
 
+import moonTexture from '../pics/moon.png';
 import { nameAnim } from './nameAnim.js';
+import './languages.js';
+import './scripts.js';
 
 // ============================================================== Event listener
 
@@ -43,7 +46,7 @@ controls.update();
 // ================================================================ Sphere setup
 
 const geometry = new THREE.SphereGeometry( 50, 50, 50 );
-const texture = new THREE.TextureLoader().load('pics/moon.png');
+const texture = new THREE.TextureLoader().load(moonTexture);
 
 texture.colorSpace = THREE.LinearSRGBColorSpace;
 
