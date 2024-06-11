@@ -24,7 +24,7 @@ export const languages = {
     "qa3": "This is the first project where I have utilized <mark>ReactJS</mark> for the frontend and <mark>Django REST Framework</mark> for the backend. The database is <mark>PostgreSQL</mark>, and the styling is entirely done with <mark>CSS</mark>. <mark>Cloudflare</mark> is used as the CDN, and images are stored on <mark>Backblaze</mark>.",
 
     // Professional website
-    "pro0": "Professional Profile",
+    "pro0": "Pro Profile",
     "pro1": "I created this website from scratch using <mark>HTML</mark>, <mark>CSS</mark> for styling and most of the animations such as the twinkling and shooting stars, <mark>Vanilla Javascript</mark>, and <mark>PHP</mark> to handle the contact form.",
     "pro2": "I tried to reproduce the view of the sky from a southern perspective, respecting the positioning of the constellations and the moon.",
 
@@ -186,7 +186,7 @@ export const languages = {
     "qa3": "C'est le premier projet où j'utilise <mark>Reactjs</mark> pour le frontend et <mark>Django REST Framework</mark> pour le backend. La base de donnée est <mark>PostgreSQL</mark> et le style est entièrement créé avec <mark>CSS</mark>. J'utilise <mark>Cloudflare</mark> comme CDN et les images sont stockées sur <mark>Backblaze</mark>.",
 
     // Professional website
-    "pro0": "Profil professionnel",
+    "pro0": "Profil pro",
     "pro1": "J'ai créé ce site web à partir de zéro, en utilisant <mark>HTML</mark>, <mark>CSS</mark> pour le style et la plupart des animations telles que les étoiles scintillantes et filantes, <mark>Vanilla Javascript</mark>, et <mark>PHP</mark> pour gérer le formulaire de contact.",
     "pro2": "J'ai essayé de reproduire la vue du ciel d'un point de vue austral, en respectant le positionnement des constellations et de la lune.",
 
