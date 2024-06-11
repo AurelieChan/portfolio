@@ -23,14 +23,12 @@ document.addEventListener('DOMContentLoaded', () => {
       document.getElementById(lang).addEventListener('click', () => selectLanguage(lang));
   });
 
-  document.addEventListener('DOMContentLoaded', function() {
-    var subdomain = getSubdomain();
-    if (subdomain && ['en', 'de', 'fr'].includes(subdomain)) { 
-        selectLanguage(subdomain);
-    } else {
-        selectLanguage('en');
-    }
-  });
+  var subdomain = getSubdomain();
+  if (subdomain && ['en', 'de', 'fr'].includes(subdomain)) { 
+      selectLanguage(subdomain, false);
+  } else {
+      selectLanguage('en', false);
+  }
 
   const submitButton = document.getElementById('submit');
   if (submitButton) {
@@ -44,13 +42,23 @@ function details(project) {
   const projectWindow = document.querySelectorAll(".display-project");
 
   // Close any potentially opened project window
-  for (let i = 0; i < projectWindow.length; i++) {
-    projectWindow[i].style.display = "none";
-  }
+  projectWindow.forEach(window => window.style.display = "none");
 
   // open selected project window
-  document.getElementById(`${project}`).style.display = "block";
-  document.getElementById('display-pro').style.display = "block"; // Scroll
+  const projectElement = document.getElementById(`${project}`);
+  const videoElement = projectElement.querySelector('video');
+
+  videoElement.oncanplay = () => {
+    projectElement.style.display = "block";
+    document.getElementById('display-pro').style.display = "block";
+  };
+
+  if (videoElement.readyState >= 3) { 
+    projectElement.style.display = "block";
+    document.getElementById('display-pro').style.display = "block";
+  } else {
+    videoElement.load();
+  }
 
   // Hide project section
   document.querySelector('#projects-section').classList.remove('section-fade-in');
@@ -82,13 +90,24 @@ function getSubdomain() {
 }
 
 // =================================================================== Languages
-export function selectLanguage(lan) {
-  var currentURL = window.location.href;
-  var baseURL = currentURL.replace(window.location.hostname, lan + '.aureliechan.de');
-  window.location.href = baseURL;
+export function selectLanguage(lang, changeURL = true) {
+  if (changeURL) {
+    var currentURL = window.location.href;
+    var baseURL = currentURL.replace(window.location.hostname, lang + '.aureliechan.de');
+    window.location.href = baseURL;
+  }
+  const translations = languages[lang];
 
+  document.querySelectorAll('[key]').forEach(element => {
+      const key = element.getAttribute('key');
+      if (translations[key]) {
+          element.innerHTML = translations[key];
+      }
+  });
+    
   // Translate placeholder of the contact form
-  contactPlaceholder(lan)
+  contactPlaceholder(lang)
+  
 }
 
 // ================================================================ Contact form
@@ -119,7 +138,7 @@ function submitForm() {
 
     var http = new XMLHttpRequest()
 
-    http.open("POST", "http://localhost:8000/php/index.php", true);
+    http.open("POST", "http://aureliechan.de/php/index.php", true);
     http.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
 
     http.send(

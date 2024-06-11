@@ -245,8 +245,8 @@ export const languages = {
 
 
 // Translate placeholder of the contact form
-export function contactPlaceholder(lan) {
-  if (lan === 'en') {
+export function contactPlaceholder(lang) {
+  if (lang === 'en') {
     document.getElementsByName('name')[0].placeholder='Name';
     document.getElementsByName('company')[0].placeholder='Company (optional)';
     document.getElementsByName('email')[0].placeholder='E-mail Address';
@@ -254,7 +254,7 @@ export function contactPlaceholder(lan) {
     document.getElementById('submit').value='Send';
   }
 
-  if (lan === 'de') {
+  if (lang === 'de') {
     document.getElementsByName('name')[0].placeholder='Name';
     document.getElementsByName('company')[0].placeholder='Unternehmen (fakultativ)';
     document.getElementsByName('email')[0].placeholder='E-Mail Adresse';
@@ -262,7 +262,7 @@ export function contactPlaceholder(lan) {
     document.getElementById('submit').value='Senden';
   }
 
-  if (lan === 'fr') {
+  if (lang === 'fr') {
     document.getElementsByName('name')[0].placeholder='Nom';
     document.getElementsByName('company')[0].placeholder='Société (facultatif)';
     document.getElementsByName('email')[0].placeholder='Votre adresse e-mail';
