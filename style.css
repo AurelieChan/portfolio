@@ -816,7 +816,11 @@ input:hover, textarea:hover, input:focus, textarea:focus {
     max-width: auto;
     width: auto;
     height: 65vh;
-    padding: 30px;
+    padding: 0px 30px 10px 30px;
+  }
+
+  .display-project > h1 {
+    margin-left: 0px;
   }
 
   .txt-box {
@@ -864,7 +868,7 @@ input:hover, textarea:hover, input:focus, textarea:focus {
   }
 
   .intro {
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .flags {
@@ -962,6 +966,13 @@ input:hover, textarea:hover, input:focus, textarea:focus {
     font-size: 24px;
   }
 
+  .intro {
+    font-size: 15px;
+  }
+
+  .active::after, nav a::after {
+    top: 25px;
+  }
 }
 
 /* ======================================================== MEDIA QUERIES 380 */
@@ -971,6 +982,10 @@ input:hover, textarea:hover, input:focus, textarea:focus {
   /* ++++ Front page ++++ */
   nav, p, .see-btns {
     font-size: 13px;
+  }
+
+  .active::after, nav a::after {
+    top: 20px;
   }
 
   .name {
