@@ -20,14 +20,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const langButtons = ['en', 'de', 'fr'];
   langButtons.forEach(lang => {
-      document.getElementById(lang).addEventListener('click', () => selectLanguage(lang));
+      document.getElementById(lang).addEventListener('click', () => changeUrl(lang));
   });
 
   var subdomain = getSubdomain();
   if (subdomain && ['en', 'de', 'fr'].includes(subdomain)) { 
-      selectLanguage(subdomain, false);
+      selectLanguage(subdomain);
   } else {
-      selectLanguage('en', false);
+      selectLanguage('en');
   }
 
   const submitButton = document.getElementById('submit');
@@ -76,7 +76,7 @@ function closeDetails(project) {
   document.querySelector('#projects-section').style.opacity = 1;
 }
 
-// ================================================= Detect subdomain (language)
+// =================================================================== Languages
 function getSubdomain() {
   var hostname = window.location.hostname;
   var parts = hostname.split('.');
@@ -89,13 +89,13 @@ function getSubdomain() {
   return subdomain;
 }
 
-// =================================================================== Languages
-export function selectLanguage(lang, changeURL = true) {
-  if (changeURL) {
-    var currentURL = window.location.href;
-    var baseURL = currentURL.replace(window.location.hostname, lang + '.aureliechan.de');
-    window.location.href = baseURL;
-  }
+function changeUrl(lang) {
+  var currentURL = window.location.href;
+  var baseURL = currentURL.replace(window.location.hostname, lang + '.aureliechan.de');
+  window.location.href = baseURL;
+}
+
+export function selectLanguage(lang) {
   const translations = languages[lang];
 
   document.querySelectorAll('[key]').forEach(element => {
@@ -106,8 +106,7 @@ export function selectLanguage(lang, changeURL = true) {
   });
     
   // Translate placeholder of the contact form
-  contactPlaceholder(lang)
-  
+  contactPlaceholder(lang)  
 }
 
 // ================================================================ Contact form
@@ -138,7 +137,7 @@ function submitForm() {
 
     var http = new XMLHttpRequest()
 
-    http.open("POST", "http://aureliechan.de/php/index.php", true);
+    http.open("POST", "https://aureliechan.de/php/index.php", true);
     http.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
 
     http.send(
