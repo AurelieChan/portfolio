@@ -17,9 +17,9 @@ h1, a, .navls, .grid-container, #contact-section {
 
 /* ==================================== Change color of highlighting in texts */
 ::selection {
-  background-color: rgba(255, 255, 248, 0.55); 
+  background-color: rgba(255, 255, 248, 0.65); 
   color: #313127;
-  text-shadow: 1px 1px 2px rgba(252, 146, 164, 0.7);
+  text-shadow: 1px 1px 2px rgba(247, 99, 124, 0.9);
 }
 
 /* =================================================================== Navbar */
@@ -28,7 +28,7 @@ nav {
   padding-top: 10px;
   padding-bottom: 10px;
   width: 100%;
-  color: #dfddcc;
+  color: #ffffd9;
   font-size: 1.2em;
   overflow: hidden;
   justify-content: space-around;
@@ -54,7 +54,6 @@ nav a {
 
 nav a:hover {
   cursor: pointer;
-  color: #ffffd9;
 }
 
 nav a::after {
@@ -65,7 +64,7 @@ nav a::after {
   height: 1.8px;
   top: 30px;
   left: 0%;
-  background-color: #ffffd9;
+  background-color: #fc92a4;
   transform-origin: bottom right;
   transition: transform 0.25s ease-out;
   display: inline-block;
@@ -77,8 +76,7 @@ nav a:hover::after {
 }
 
 .active {
-  color: #ffffd9;
-  text-shadow: 0 0 5px #ccffff;
+  color: #fc92a4;
   transition: all 1s ease;
 }
 
@@ -105,12 +103,12 @@ nav a:hover::after {
 
 .name span {
   font-family: 'Moirai One', cursive;
-  background: -webkit-linear-gradient(#ff0066, #ffffcc);
+  background: -webkit-linear-gradient(#ff0066 0%, #ffffab 95%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   opacity: 0;
-  text-shadow: 0 0 7px #FF5050, 0 0 10px #a8b2f4;
+  text-shadow: 0 0 10px #f452c3, 0 2px 10px #f3df9c;
   transition: all 1s ease;
 }
 
@@ -130,14 +128,14 @@ span.fade {
 }
 
 .fsdev {
-  background: -webkit-linear-gradient(#f55275, #fecac1);
+  background: -webkit-linear-gradient(#f55275, #fc92a4, #ffffab);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .tags {
-  color: #9e9883;
+  color: #cac6aa;
 }
 
 .top {
@@ -193,7 +191,7 @@ span.fade {
 .flags > img {
   width: 38px;
   border-radius: 100%;
-  box-shadow: 0px 0px 15px 1.3px #f2f1e8;
+  box-shadow: 0px 0px 15px 1px #f2f1e8;
   transition: transform 0.25s ease-out;
 }
 
@@ -225,7 +223,7 @@ span.fade {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(252, 146, 164, 0.55);
+  background-color: #f55275;
 }
 
 section {
@@ -263,7 +261,7 @@ h1 {
   font-family: 'Moirai One', cursive;
   font-size: 40px;
   margin-top: 25px;
-  background: -webkit-linear-gradient(#ff0066, #ffffe3);
+  background: -webkit-linear-gradient(#ff0066, #FFFFCC);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -283,7 +281,7 @@ h1 {
 }
 
 mark {
-  color: #ffedbe;
+  color: #ffffcc;
   background-color: rgba(0, 0, 0, 0.0);
 }
 
@@ -306,17 +304,16 @@ mark {
 }
 
 .grid-item {
-  background-color: rgba(252, 146, 164, 0.6);
+  background: linear-gradient(to bottom, #fd6e94 0%, #ffffab 60%);
   margin: 12px;
   text-align: center;
-  transition: transform 0.5s;
   height: 172px;
   border-radius: 10px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.25);
-
   position:relative;
   overflow:hidden;
   width: 200px;
+  transition: transform 0.5s ease;
 }
 
 .project-pics {
@@ -327,7 +324,7 @@ mark {
 }
 
 .grid-item:hover {
-  background-color: rgba(252, 146, 164, 0.85);
+  background: linear-gradient(to bottom, #fd6e94 0%, #ffffab 45%);
   transform: scale(1.15);
   cursor: pointer;
 }
@@ -355,7 +352,7 @@ mark {
   float: right;
   margin-top: 25px;
   font-size: 40px;
-  background: -webkit-linear-gradient(#ff0066, #e57a92, #ffffff);
+  background: -webkit-linear-gradient(#ff0066, #ffffab);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -385,7 +382,6 @@ mark {
   display: flex;
 }
 
-/* .see-btns > button { */
 .see-btns > a {
   height: auto !important;
 }
@@ -402,7 +398,6 @@ mark {
   overflow-y: auto;
 }
 
-/* Next & previous buttons */
 .prev, .next {
   position: absolute;
   top: 50%;
@@ -411,7 +406,7 @@ mark {
   padding: 8px;
   color: #f5c4fc;
   font-size: 30px;
-  background: -webkit-linear-gradient(#ff0066, #e57a92, #ffffff);
+  background: -webkit-linear-gradient(#ff0066, #ffffcc);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -427,7 +422,7 @@ mark {
 
 .prev:hover, .next:hover, .close:hover {
   cursor: pointer;
-  background: -webkit-linear-gradient(#ff6600, #ffffff);
+  background: -webkit-linear-gradient(#ffffcc, #ff0066);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -456,9 +451,9 @@ mark {
   font-size: 0.9em;
   color: #000000;
 
-  background-image: linear-gradient(to right, rgba(229, 122, 146, 0.7),
-    rgba(255, 255, 255, 0.3));
-  background-color: rgba(255, 204, 153, 0.9);
+  background-image: linear-gradient(to right, rgba(255, 0, 102, 0.5),
+  rgba(252, 146, 164, 0.8), rgba(255, 255, 255, 0));
+  background-color: rgb(255, 255, 204);
 
   box-shadow: 0 1px 40px rgba(0, 0, 0, 0.2);
 
@@ -472,7 +467,7 @@ mark {
 }
 
 .links > a:hover, .see-btns > a:hover {
-  background-color: #ff9966;
+  background-color: rgb(255, 240, 171);
   transform: scale(1.15);
 }
 
@@ -482,11 +477,14 @@ mark {
 }
 
 .vtx-link {
-  color: #ff99c2;
+  
+  color: #fc92a4;
+  font-weight: 600;
+  text-decoration: none;
 }
 
 .vtx-link:hover{
-  color: #f6b1cc;
+  color: #ffff8f;
 }
 
 /* +++++++++++++++++++++++++++++++++ Contact ++++++++++++++++++++++++++++++++ */
@@ -500,7 +498,7 @@ input, textarea {
   resize: vertical;
   outline: none;
   border-radius: 10px;
-  background-color: rgba(255, 236, 227, 0.65);
+  background-color: rgba(255, 236, 230, 0.75);
   box-shadow: 0 1px 40px rgba(0, 0, 0, 0.2);
   font-family: 'Fira Code', monospace;
   font-size: 1em;
@@ -515,7 +513,7 @@ input, textarea {
 }
 
 input:hover, textarea:hover, input:focus, textarea:focus {
-  background-color: rgba(255, 220, 216, 0.9);
+  background-color: rgba(255, 220, 216, 0.95);
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -528,9 +526,9 @@ input:hover, textarea:hover, input:focus, textarea:focus {
   text-align: center;
   font-size: 1.2em;
   color: #2a333a;
-  background-image: linear-gradient(to right, rgba(229, 122, 146, 0.5),
-    rgba(255, 255, 255, 0.4));
-  background-color: rgba(255, 204, 153, 0.8);
+  background-image: linear-gradient(to right, rgba(255, 0, 102, 0.5),
+  rgba(252, 146, 164, 0.8), rgba(255, 255, 255, 0));
+  background-color: rgba(255, 255, 204, 1);
   box-shadow: 0 1px 40px rgba(0, 0, 0, 0.2);
   border: none;
   padding: 8px;
@@ -542,7 +540,7 @@ input:hover, textarea:hover, input:focus, textarea:focus {
 }
 
 .button:hover {
-  background-color: #ff9966;
+  background-color: rgb(255, 240, 171);
   color: #000000;
   transform: scale(1.015);
 }

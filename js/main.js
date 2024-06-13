@@ -74,7 +74,7 @@ const disco = new THREE.Mesh(
   new THREE.MeshStandardMaterial({
     opacity: 0.95,
     transparent: true,
-    color: '#ffadc9',
+    color: '#ffa9ca',
     roughness: 0.2,
     metalness: 0.5,
     flatShading: true
