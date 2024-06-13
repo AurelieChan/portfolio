@@ -24,7 +24,7 @@ export const languages = {
     "qa3": "This is the first project where I have utilized <mark>ReactJS</mark> for the frontend and <mark>Django REST Framework</mark> for the backend. The database is <mark>PostgreSQL</mark>, and the styling is entirely done with <mark>CSS</mark>. <mark>Cloudflare</mark> is used as the CDN, and images are stored on <mark>Backblaze</mark>.",
 
     // Professional website
-    "pro0": "Pro Profile",
+    "pro0": "Pro-file",
     "pro1": "I created this website from scratch using <mark>HTML</mark>, <mark>CSS</mark> for styling and most of the animations such as the twinkling and shooting stars, <mark>Vanilla Javascript</mark>, and <mark>PHP</mark> to handle the contact form.",
     "pro2": "I tried to reproduce the view of the sky from a southern perspective, respecting the positioning of the constellations and the moon.",
 
@@ -45,7 +45,7 @@ export const languages = {
     "sm3": "For the visual aspect of the website, I decided to be creative and got inspired by the atmosphere of Berlin nightlife.",
 
     // Mail box
-    "mb0": "Mail box",
+    "mb0": "Mail Box",
     "mb1": "This project is an exercise for the online CS50W course offered by Harvard University.",
     "mb2": "The requirement was to design a frontend for an email client that makes API calls to send, receive, and update emails, using the API provided by the application.",
     "mb3": "This single-page-app had to be completed using <mark>JavaScript</mark>, <mark>HTML</mark>, and <mark>CSS</mark>. <mark>Django</mark>, a <mark>Python-based framework</mark>, is used for the backend.",
@@ -105,7 +105,7 @@ export const languages = {
     "qa3": "Dies ist das erste Projekt, bei dem ich <mark>ReactJS</mark> für das Frontend und das <mark>Django REST Framework</mark> für das Backend verwendet habe. Die Datenbank ist <mark>PostgreSQL</mark>, und das Styling erfolgt vollständig mit <mark>CSS</mark>. <mark>Cloudflare</mark> wird als CDN verwendet, und die Bilder werden auf <mark>Backblaze</mark> gespeichert.",
 
     // Professional website
-    "pro0": "Berufliches Profil",
+    "pro0": "Pro-fil",
     "pro1": "Ich habe diese Website von Grund auf neu erstellt und dabei <mark>HTML</mark>, <mark>CSS</mark> für das Styling und die meisten Animationen wie das Funkeln und die Sternschnuppen, <mark>Vanilla Javascript</mark> und <mark>PHP</mark> für das Kontaktformular verwendet.",
     "pro2": "Ich habe versucht, die Himmelsansicht aus einer australischen Perspektive zu reproduzieren und dabei die Positionierung der Sternbilder und des Mondes zu beachten.",
 
@@ -186,7 +186,7 @@ export const languages = {
     "qa3": "C'est le premier projet où j'utilise <mark>Reactjs</mark> pour le frontend et <mark>Django REST Framework</mark> pour le backend. La base de donnée est <mark>PostgreSQL</mark> et le style est entièrement créé avec <mark>CSS</mark>. J'utilise <mark>Cloudflare</mark> comme CDN et les images sont stockées sur <mark>Backblaze</mark>.",
 
     // Professional website
-    "pro0": "Profil pro",
+    "pro0": "Pro-fil",
     "pro1": "J'ai créé ce site web à partir de zéro, en utilisant <mark>HTML</mark>, <mark>CSS</mark> pour le style et la plupart des animations telles que les étoiles scintillantes et filantes, <mark>Vanilla Javascript</mark>, et <mark>PHP</mark> pour gérer le formulaire de contact.",
     "pro2": "J'ai essayé de reproduire la vue du ciel d'un point de vue austral, en respectant le positionnement des constellations et de la lune.",
 
@@ -207,7 +207,7 @@ export const languages = {
     "sm3": "Pour l'aspect visuel du site, j'ai décidé d'être créative et de m'inspirer de la vie nocturne berlinoise.",
 
     // Mail box
-    "mb0": "Boîte Courriel",
+    "mb0": "Boîte courriel",
     "mb1": "Ce projet est un exercice pour le cours en ligne CS50W, offert par l'Université de Harvard.",
     "mb2": "L'exigence était de concevoir un front-end pour un client de messagerie qui fait des appels API pour envoyer, recevoir et mettre à jour des courriels, en utilisant l'API fournie par l'application.",
     "mb3": "Cette application d'une seule page devait être réalisée en utilisant <mark>JavaScript</mark>, <mark>HTML</mark> et <mark>CSS</mark>. Le backend utilise <mark>Django</mark>, un framework basé sur <mark>Python</mark>.",
@@ -219,7 +219,7 @@ export const languages = {
     "auc3": "Ce site a été créé à l'aide de <mark>Django</mark>, un framework basé sur <mark>Python</mark>, de <mark>HTML</mark> et de <mark>CSS</mark>. J'ai opté pour un look des années 70.",
 
     // Wiki beer
-    "wb0": "Wiki Bières",
+    "wb0": "Wiki bières",
     "wb1": "Ce projet est un exercice pour le cours en ligne CS50W, proposé par l'Université de Harvard. ",
     "wb2": "L'exigence était de compléter l'implémentation d'une encyclopédie en ligne de type Wikipedia.",
     "wb3": "C'est le tout premier projet pour lequel j'ai utilisé <mark>Django</mark> comme framework backend, créé un moteur de recherche basique et exploré la syntaxe <mark>Markdown</mark>. Le reste du site a été construit en <mark>HTML</mark> et <mark>CSS</mark>.",
