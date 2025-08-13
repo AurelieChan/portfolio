@@ -331,7 +331,7 @@ h1 {
   font-family: 'Moirai One', cursive;
   font-size: 40px;
   margin-top: 25px;
-  color:#faf1e2;
+  color:#fae0b8;
   text-shadow: 0px 1px 0px #fde9ec, 0 4px 8px #f74a8f;
 
   width: auto;
@@ -539,7 +539,6 @@ mark {
 .links > a, .see-btns > a {
   font-family: 'Fira Code', monospace;
   text-decoration: none;
-  font-size: 0.9em;
   color: #000000;
   background-image: linear-gradient(to bottom, rgba(252, 3, 102, 0.5),
   rgba(245, 105, 129, 0.6), rgba(245, 105, 129, 0.35));
