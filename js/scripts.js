@@ -20,6 +20,12 @@ document.addEventListener('DOMContentLoaded', () => {
       });
   });
 
+  document.querySelectorAll('nav .nb').forEach(nb => {
+    nb.addEventListener('click', () => {
+      closeAllProjects();
+    });
+  });
+
   // Handle languages
   const langButtons = ['en', 'de', 'fr'];
   langButtons.forEach(lang => {
@@ -67,49 +73,103 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ==================================================================== Projects
-function details(project) {
+let currentProjectId = null;
+let lastOpenToken = 0;
 
-  const projectWindow = document.querySelectorAll(".display-project");
-
-  // Close any potentially opened project window
-  projectWindow.forEach(window => window.style.display = "none");
-
-  // open selected project window
-  const projectElement = document.getElementById(`${project}`);
-  const videoElement = projectElement.querySelector('video');
-
-    projectElement.setAttribute('tabindex', '-1');
-    requestAnimationFrame(() => projectElement.focus());
-
-  videoElement.oncanplay = () => {
-    projectElement.style.display = "block";
-    document.getElementById('display-pro').style.display = "block";
-  };
-
-  if (videoElement.readyState >= 3) { 
-    projectElement.style.display = "block";
-    document.getElementById('display-pro').style.display = "block";
-  } else {
-    videoElement.load();
-  }
-
-  // Hide project section
-  document.querySelector('#projects-section').classList.remove('section-fade-in');
-  document.querySelector('#projects-section').style.opacity = 0;
+// Close everything safely
+function closeAllProjects() {
+  document.querySelectorAll('.display-project').forEach(sec => {
+    // cancel any pending oncanplay for its video
+    const vid = sec.querySelector('video');
+    if (vid) {
+      vid.oncanplay = null; 
+      try { vid.pause(); } catch(e){}
+      vid.currentTime = 0;  
+    }
+    sec.style.display = "none";
+    delete sec.dataset.openToken;
+  });
+  const overlay = document.getElementById('display-pro');
+  if (overlay) overlay.style.display = "none";
+  currentProjectId = null;
 }
 
-function closeDetails(project) {
+function details(projectId) {
+  closeAllProjects();
 
-  // close project window
-  document.getElementById(`${project}`).style.display = "none";
-  document.getElementById('display-pro').style.display = "none"; // Scroll
+  const projectElement = document.getElementById(projectId);
+  if (!projectElement) return;
 
-  // Show project section
-  const projectSection = document.querySelector('#projects-section');
+  const overlay = document.getElementById('display-pro');
+  const videoElement = projectElement.querySelector('video');
 
-  projectSection.classList.add('section-fade-in');
-  projectSection.style.opacity = 1;
-  projectSection.focus();
+  currentProjectId = projectId;
+
+  // Create a fresh token for THIS open attempt
+  const myToken = String(++lastOpenToken);
+  projectElement.dataset.openToken = myToken;
+
+  // === Reveal immediately (optimistic)
+  projectElement.style.display = "block";
+  if (overlay) overlay.style.display = "block";
+  projectElement.setAttribute('tabindex', '-1');
+  requestAnimationFrame(() => projectElement.focus());
+
+  // Handle video loading if needed
+  if (videoElement) {
+    // Prevent old handler from firing
+    videoElement.oncanplay = null;
+
+    if (videoElement.readyState < 3) {
+      videoElement.oncanplay = () => {
+        // Ensure this is still the active open request
+        if (projectElement.dataset.openToken !== myToken) return;
+        videoElement.oncanplay = null;
+        // Optionally: auto-play or do nothing
+      };
+      videoElement.load();
+    }
+  }
+
+  // Visually hide the projects grid
+  const projectsSection = document.querySelector('#projects-section');
+  if (projectsSection) {
+    projectsSection.classList.remove('section-fade-in');
+    projectsSection.style.opacity = 0;
+  }
+}
+
+function closeDetails(projectId) {
+  const sec = document.getElementById(projectId);
+  if (sec) {
+    // cancel pending video handler
+    const vid = sec.querySelector('video');
+    if (vid) {
+      vid.oncanplay = null;
+      try { vid.pause(); } catch(e){}
+      vid.currentTime = 0;
+    }
+    // hide just this one
+    sec.style.display = "none";
+    delete sec.dataset.openToken;
+  }
+
+  // If no projects are visible anymore, hide overlay
+  const anyOpen = Array.from(document.querySelectorAll('.display-project'))
+    .some(s => s.style.display !== 'none');
+  if (!anyOpen) {
+    const overlay = document.getElementById('display-pro');
+    if (overlay) overlay.style.display = "none";
+    currentProjectId = null;
+  }
+
+  // Restore the projects section
+  const projectsSection = document.querySelector('#projects-section');
+  if (projectsSection) {
+    projectsSection.classList.add('section-fade-in');
+    projectsSection.style.opacity = 1;
+    projectsSection.focus();
+  }
 }
 
 // =================================================================== Languages
