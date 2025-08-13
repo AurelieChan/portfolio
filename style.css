@@ -1085,7 +1085,6 @@ input:hover, textarea:hover, input:focus, textarea:focus {
 
   .active::after, nav button::after{
     top: 25px;
-    /* top: 20px; */
   }
 
   .name {
