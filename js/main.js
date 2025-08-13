@@ -202,22 +202,30 @@ function landscape() {
 document.getElementById('projects').addEventListener('click', function(e) {
   if (homepage === true) {
     landscape();
-    gsap.to(camera.position, {x: 0, y: 0, z: 30, duration: 4});
+    gsap.to(camera.position, {x: 0, y: 0, z: 30, duration: 4, onComplete: () => {
+      document.getElementById('projects-section').focus();
+    }});
   }
   else {
-    gsap.to(camera.position, {x: 0, y: 0, z: 30, duration: 2.5});
+    gsap.to(camera.position, {x: 0, y: 0, z: 30, duration: 2.5, onComplete: () => {
+      document.getElementById('projects-section').focus();
+    }});
   }
-})
+});
 
 document.getElementById('about').addEventListener('click', function(e) {
-    landscape();
-    gsap.to(camera.position, {x: -27, y: 0, z: -13, duration: 2.5});
-})
+  landscape();
+  gsap.to(camera.position, {x: -27, y: 0, z: -13, duration: 2.5, onComplete: () => {
+    document.getElementById('about-section').focus();
+  }});
+});
 
 document.getElementById('contact').addEventListener('click', function(e) {
-    landscape();
-    gsap.to(camera.position, {x: 27, y: 0, z: -14, duration: 2.5});
-})
+  landscape();
+  gsap.to(camera.position, {x: 27, y: 0, z: -14, duration: 2.5, onComplete: () => {
+    document.getElementById('contact-section').focus();
+  }});
+});
 
 // ============================================ Navigate with mouse and trackpad
 

@@ -7,6 +7,13 @@ body {
   overflow: hidden; 
 }
 
+/* =========================================================== Focus sections */
+section:focus, .txt-box:focus  {
+  outline: 1px solid #fc92a4;
+  box-shadow: 1px 1px 15px 3px #fc92a4;
+  border: none;
+}
+
 /* ============================= Disable highlighting in buttons, forms, etc. */
 h1, a, .navls, .grid-container, #contact-section {
   -webkit-user-select: none; 
@@ -20,6 +27,34 @@ h1, a, .navls, .grid-container, #contact-section {
   background-color: rgba(255, 255, 248, 0.65); 
   color: #313127;
   text-shadow: 1px 1px 2px rgba(247, 99, 124, 0.9);
+}
+
+/* ===================================== Accessibility: button back to navbar */
+.back-to-nav {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  opacity: 0;            
+  pointer-events: none;
+}
+
+.back-to-nav:focus {
+  opacity: 1;
+  cursor: pointer;
+  pointer-events: auto;
+  border: none;
+
+  padding: 10px;
+  background-color: #25251f;
+  color: #ffffd9;
+  font-family: 'Fira Code', monospace;
+  font-size: 1.2rem;
+}
+
+.back-to-nav:hover {
+  color: #fc92a4;
 }
 
 /* =================================================================== Navbar */
@@ -48,15 +83,29 @@ nav {
   background-color: #25251f;
 }
 
-nav a {
+nav button {
   position: relative;
+  border: none;
+  background: none;
+  padding: 0 2px 0 2px;
+  margin: 0;
+  height: 30px;
+  font: inherit;
+  color: inherit;
+  text-align: center;
 }
 
-nav a:hover {
+nav button:hover {
   cursor: pointer;
 }
 
-nav a::after {
+nav button:focus-visible, .back-to-nav:focus, .vtx-link:focus {
+  outline: 1px solid #fc92a4;
+  box-shadow: 0px 1px 15px 2px #fc92a4;
+  border-radius: 5px;
+}
+
+nav button::after {
   content: '';
   position: absolute;
   width: 100%;
@@ -70,7 +119,7 @@ nav a::after {
   display: inline-block;
 }
 
-nav a:hover::after {
+nav button:hover::after, nav button:focus::after  {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
@@ -186,24 +235,45 @@ span.fade {
   transform: translateX(-50%);
   position: absolute;
   width: 515px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.flags > img {
+.flag-button {
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.flag-button img {
   width: 38px;
   border-radius: 100%;
   box-shadow: 0px 0px 15px 1px #f2f1e8;
-  transition: transform 0.25s ease-out;
+  transition: transform 0.25s ease-out, box-shadow 0.25s ease-out;
 }
 
-.flags > img:hover {
-  cursor: pointer;
-  box-shadow: 0px 0px 20px 3px #f2f1e8;
+.flag-button:hover img {
+  box-shadow: 0px 0px 30px 4px #f2f1e8;
   transform: translateY(-4px);
 }
 
+.flag-button:focus img {
+  transform: translateY(1px);
+  width: 45px;
+}
+
+.flag-button:focus {
+  outline: 2px solid #fc92a4;
+  box-shadow: 1px 1px 35px 5px #fc92a4;
+  outline-offset: -1px;
+  border-radius: 100%;
+}
+
 .germany {
-  margin-right: 165px;
-  margin-left: 165px;
+  margin: 0 165px;
 }
 
 .uk {
@@ -261,10 +331,8 @@ h1 {
   font-family: 'Moirai One', cursive;
   font-size: 40px;
   margin-top: 25px;
-  background: -webkit-linear-gradient(#ff0066, #FFFFCC);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color:#faf1e2;
+  text-shadow: 0px 1px 0px #fde9ec, 0 4px 8px #f74a8f;
 
   width: auto;
   max-width: 0%;
@@ -304,7 +372,10 @@ mark {
 }
 
 .grid-item {
+  all: unset;              
+  display: block;
   background: linear-gradient(to bottom, #fd6e94 0%, #ffffab 60%);
+  color:  #30302a;
   margin: 12px;
   text-align: center;
   height: 172px;
@@ -323,7 +394,7 @@ mark {
   border-bottom-right-radius: 10px;
 }
 
-.grid-item:hover {
+.grid-item:hover, .grid-item:focus {
   background: linear-gradient(to bottom, #fd6e94 0%, #ffffab 45%);
   transform: scale(1.15);
   cursor: pointer;
@@ -350,12 +421,24 @@ mark {
 
 .close {
   float: right;
-  margin-top: 25px;
+  margin-top: 35px;
+  padding: 0;
   font-size: 40px;
-  background: -webkit-linear-gradient(#ff0066, #ffffab);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  width: 40px;
+  height: 40px;
+  font-family: 'Fira Code', monospace;
+  line-height: 30px;
+  border: none;
+  color:#faf1e2;
+  background: none;
+	text-shadow: 0px 1px 0px #fde9ec, 0 4px 8px #f74a8f;
+}
+
+.close:focus, .prev:focus, .next:focus {
+  border-radius: 50%; 
+  outline: 1px solid #fc92a4;
+  box-shadow: 1px 1px 35px 5px #fc92a4;
+  background-color: rgba(255, 0, 102, 0.1); 
 }
 
 .presentation {
@@ -395,37 +478,45 @@ mark {
   padding-left: 20px;
   margin-top: -17px;
   line-height: 1.6;
+  border-radius: 5px;
   overflow-y: auto;
 }
 
 .prev, .next {
   position: absolute;
+  border: none;
   top: 50%;
   width: auto;
   margin-top: -22px;
   padding: 8px;
   color: #f5c4fc;
   font-size: 30px;
-  background: -webkit-linear-gradient(#ff0066, #ffffcc);
+  background:#f3f3a1;
+	text-shadow: 0px 1px 0px #fde9ec, 0 4px 8px #f74a8f;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .next {
-  right: 0;
+  right: 1px;
 }
 
 .prev {
-  left: 0;
+  left: 1px;
 }
 
-.prev:hover, .next:hover, .close:hover {
+.prev:hover, .next:hover, .close:hover,
+.prev:focus, .next:focus, .close:focus {
   cursor: pointer;
-  background: -webkit-linear-gradient(#ffffcc, #ff0066);
+  text-shadow: 0 0 1px #fde9ec, 0 0 10px #f3f3a1, 0 0 20px #f74a8f, 0 0 40px #fde9ec;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.prev:hover, .next:hover, .close:hover {
+  transform: translateY(3px);
 }
 
 /* ++++++++++++++++++++++++++++++++ About me ++++++++++++++++++++++++++++++++ */
@@ -450,10 +541,9 @@ mark {
   text-decoration: none;
   font-size: 0.9em;
   color: #000000;
-
-  background-image: linear-gradient(to right, rgba(255, 0, 102, 0.5),
-  rgba(252, 146, 164, 0.8), rgba(255, 255, 255, 0));
-  background-color: rgb(255, 255, 204);
+  background-image: linear-gradient(to bottom, rgba(252, 3, 102, 0.5),
+  rgba(245, 105, 129, 0.6), rgba(245, 105, 129, 0.35));
+  background-color: rgb(248, 248, 192);
 
   box-shadow: 0 1px 40px rgba(0, 0, 0, 0.2);
 
@@ -466,9 +556,16 @@ mark {
   transition: 0.4s;
 }
 
-.links > a:hover, .see-btns > a:hover {
-  background-color: rgb(255, 240, 171);
+.links > a:hover, .see-btns > a:hover,
+.links > a:focus, .see-btns > a:focus {
+  background-color: rgb(248, 229, 147);
   transform: scale(1.15);
+}
+
+.links > a:focus, .see-btns > a:focus, input:focus, 
+textarea:focus, video:focus {
+  outline: 1px solid #fc92a4;
+  box-shadow: 0px 1px 20px 2px #fc92a4;
 }
 
 .github, .linkedin, .youtube {
@@ -477,13 +574,11 @@ mark {
 }
 
 .vtx-link {
-  
-  color: #fc92a4;
+  color: #facfd6;
   font-weight: 600;
-  text-decoration: none;
 }
 
-.vtx-link:hover{
+.vtx-link:hover, .vtx-link:focus {
   color: #ffff8f;
 }
 
@@ -513,11 +608,11 @@ input, textarea {
 }
 
 input:hover, textarea:hover, input:focus, textarea:focus {
-  background-color: rgba(255, 220, 216, 0.95);
+  background-color: rgba(249, 208, 205, 0.95);
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: #636a70;
+  color: #52595e;
   opacity: 1; /* Firefox */
 }
 
@@ -539,7 +634,7 @@ input:hover, textarea:hover, input:focus, textarea:focus {
   transition: 0.4s;
 }
 
-.button:hover {
+.button:hover, .button:focus {
   background-color: rgb(255, 240, 171);
   color: #000000;
   transform: scale(1.015);
@@ -594,6 +689,7 @@ input:hover, textarea:hover, input:focus, textarea:focus {
 
   .close {
     margin-top: 10px;
+    margin-right: -10px;
   }
 
   .gif-display {
@@ -628,7 +724,7 @@ input:hover, textarea:hover, input:focus, textarea:focus {
     width: 370px;
   }
 
-  .flags > img {
+  .flag-button img {
     width: 30px;
   }
 
@@ -692,7 +788,7 @@ input:hover, textarea:hover, input:focus, textarea:focus {
     width: 300px;
   }
 
-  .flags > img {
+  .flag-button img {
     width: 25px;
   }
 
@@ -741,7 +837,7 @@ input:hover, textarea:hover, input:focus, textarea:focus {
 @media only screen and (max-height: 350px) and (orientation: landscape) {
 
   /* ++++ Front page ++++ */
-  .fsdev, .tags, .flags > img, .display-project {
+  .fsdev, .tags, .flag-button img, .display-project {
     opacity: 0;
   }
 
@@ -876,7 +972,7 @@ input:hover, textarea:hover, input:focus, textarea:focus {
     width: 300px;
   }
 
-  .flags > img {
+  .flag-button img {
     width: 30px;
   }
 
@@ -924,6 +1020,7 @@ input:hover, textarea:hover, input:focus, textarea:focus {
 
   .close {
     margin-top: 10px;
+    margin-right: -10px;
     font-size: 30px;
   }
 
@@ -968,8 +1065,12 @@ input:hover, textarea:hover, input:focus, textarea:focus {
     font-size: 15px;
   }
 
-  .active::after, nav a::after {
-    top: 25px;
+  nav button {
+    height: 28px;
+  }
+
+  .active::after, nav button::after {
+    top: 28px;
   }
 }
 
@@ -982,8 +1083,9 @@ input:hover, textarea:hover, input:focus, textarea:focus {
     font-size: 13px;
   }
 
-  .active::after, nav a::after {
-    top: 20px;
+  .active::after, nav button::after{
+    top: 25px;
+    /* top: 20px; */
   }
 
   .name {

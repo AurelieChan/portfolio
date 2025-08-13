@@ -2,6 +2,8 @@ import { languages, contactPlaceholder } from './languages.js';
 
 // ============================================================= Event listeners
 document.addEventListener('DOMContentLoaded', () => {
+
+  // Projects section
   const showProject = document.querySelectorAll('.grid-item, .prev, .next');
   showProject.forEach(item => {
     item.addEventListener('click', () => {
@@ -18,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
   });
 
+  // Handle languages
   const langButtons = ['en', 'de', 'fr'];
   langButtons.forEach(lang => {
       document.getElementById(lang).addEventListener('click', () => changeUrl(lang));
@@ -30,9 +33,36 @@ document.addEventListener('DOMContentLoaded', () => {
       selectLanguage('en');
   }
 
+  // Submit contact form
   const submitButton = document.getElementById('submit');
   if (submitButton) {
       submitButton.addEventListener('click', submitForm);
+  }
+
+  // Accessibility button to get back to navbar
+  const nav = document.querySelector('nav[role="navigation"]') || document.querySelector('nav');
+  const backBtn = document.getElementById('back-to-nav');
+  const sections = document.querySelectorAll('section, .display-project');
+
+  if (nav && !nav.hasAttribute('tabindex')) nav.setAttribute('tabindex', '-1');
+
+  // Always place the button at the end of whichever section currently has focus inside it
+  const parkBtnAtEnd = (container) => {
+    if (!backBtn || !container) return;
+    if (backBtn.parentElement !== container) {
+      container.appendChild(backBtn);
+    }
+  };
+
+  sections.forEach(sec => {
+    sec.addEventListener('focusin', () => parkBtnAtEnd(sec));
+  });
+
+  if (backBtn && nav) {
+    backBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      nav.focus();
+    });
   }
 });
 
@@ -47,6 +77,9 @@ function details(project) {
   // open selected project window
   const projectElement = document.getElementById(`${project}`);
   const videoElement = projectElement.querySelector('video');
+
+    projectElement.setAttribute('tabindex', '-1');
+    requestAnimationFrame(() => projectElement.focus());
 
   videoElement.oncanplay = () => {
     projectElement.style.display = "block";
@@ -72,8 +105,11 @@ function closeDetails(project) {
   document.getElementById('display-pro').style.display = "none"; // Scroll
 
   // Show project section
-  document.querySelector('#projects-section').classList.add('section-fade-in');
-  document.querySelector('#projects-section').style.opacity = 1;
+  const projectSection = document.querySelector('#projects-section');
+
+  projectSection.classList.add('section-fade-in');
+  projectSection.style.opacity = 1;
+  projectSection.focus();
 }
 
 // =================================================================== Languages
@@ -98,15 +134,21 @@ function changeUrl(lang) {
 export function selectLanguage(lang) {
   const translations = languages[lang];
 
-  document.querySelectorAll('[key]').forEach(element => {
-      const key = element.getAttribute('key');
-      if (translations[key]) {
-          element.innerHTML = translations[key];
-      }
+  document.querySelectorAll('[key].lang').forEach(el => {
+    const key = el.getAttribute('key');
+    const attr = el.getAttribute('data-attr'); // e.g., "aria-label"
+
+    if (!translations || !translations[key]) return;
+
+    if (attr) {
+      el.setAttribute(attr, translations[key]);
+    } else {
+      el.innerHTML = translations[key];
+    }
   });
-    
+
   // Translate placeholder of the contact form
-  contactPlaceholder(lang)  
+  contactPlaceholder(lang);
 }
 
 // ================================================================ Contact form

@@ -25,74 +25,79 @@
 
 <!-- Navbar -->
 
-    <nav class='navhp'>
-      <a id='home' class='active nb lang' key='nb1'>Home</a>
-      <a id='projects' class='nb lang' key='nb2'>Projects</a>
-      <a id='about' class='nb lang' key='nb3'>About me</a>
-      <a id='contact' class='nb lang' key='nb4'>Contact</a>
+    <nav class='navhp' role="navigation" aria-label="Navigation" tabindex="-1">
+      <button id='home' class='active nb lang' key='nb1'>Home</button>
+      <button id='projects' class='nb lang' key='nb2'>Projects</button>
+      <button id='about' class='nb lang' key='nb3'>About me</button>
+      <button id='contact' class='nb lang' key='nb4'>Contact</button>
     </nav>
 
 <!-- Home page -->
-
-    <p class="name">Aurélie Chan</p>
+  <p aria-hidden="true" class="name">Aurélie Chan</p>
+    <span aria-label="Aurélie Chan" />
 
     <p class="intro top from-left">
-      <span class='tags'>&lt;&#9790;&gt;</span>
+      <span class='tags' aria-hidden="true">&lt;&#9790;&gt;</span>
       <span class='fsdev lang' key='dev'>I'm a full stack developer</span>
     </p>
     <p class="intro bottom from-right">
       <span class='fsdev lang' key='des'>with some design skills.</span>
-      <span class='tags'>&lt;/&#9790;&gt;</span>
+      <span class='tags' aria-hidden="true">&lt;/&#9790;&gt;</span>
     </p>
 
     <div class="flags flags-fade">
-      <img src="pics/flags/uk.png" alt="UK flag" id='en' class='uk'>
-      <img src="pics/flags/germany.png" alt="german flag" id='de' class='germany'>
-      <img src="pics/flags/france.png" alt="french flag" id='fr' class='france'>
+      <button id="en" class="flag-button">
+        <img src="pics/flags/uk.png" alt="English - Anglais" />
+      </button>
+      <button id="de" class="flag-button germany">
+        <img src="pics/flags/germany.png" alt="Deutsche - German - Allemand" />
+      </button>
+      <button id="fr" class="flag-button">
+        <img src="pics/flags/france.png" alt="Français - French - Französisch" />
+      </button>
     </div>
 
 <!-- Project section -->
 
-    <section id='projects-section'>
+    <section id='projects-section' tabindex="-1">
       <h1 class='lang pro' key='pro-title'>Projects</h1>
 
       <p class='lang pro' key='pro-intro'>Click on the projects below to see more details.</p>
 
       <div class="grid-container">
-        <div class="grid-item" data-project-id="vortext">
+        <button class="grid-item" data-project-id="vortext">
           <p class='lang' key='qa0'>VortexT</p>
-          <img src="pics/projects/vortext.png" alt="vortext" class='project-pics'>
-        </div>
-        <div class="grid-item" data-project-id="scientist">
+          <img src="pics/projects/vortext.png" alt="" class='project-pics'>
+        </button>
+        <button class="grid-item" data-project-id="scientist">
           <p class='lang' key='pro0'>Professional Profile</p>
-          <img src="pics/projects/scientist.png" alt="scientist" class='project-pics'>
-        </div>
-        <div class="grid-item" data-project-id="retrofun">
+          <img src="pics/projects/scientist.png" alt="" class='project-pics'>
+        </button>
+        <button class="grid-item" data-project-id="retrofun">
           <p class='lang' key='ret0'>Retrofun Games</p>
-          <img src="pics/projects/retrofun.png" alt="retrofun" class='project-pics'>
-        </div>
-        <div class="grid-item" data-project-id="portfolio">
+          <img src="pics/projects/retrofun.png" alt="" class='project-pics'>
+        </button>
+        <button class="grid-item" data-project-id="portfolio">
           <p class='lang' key='por0'>My Portfolio</p>
-          <img src="pics/projects/portfolio.png" alt="portfolio" class='project-pics'>
-        </div>
-        <div class="grid-item" data-project-id="chatter">
+          <img src="pics/projects/portfolio.png" alt="" class='project-pics'>
+        </button>
+        <button class="grid-item" data-project-id="chatter">
           <p class='lang' key='sm0'>Social Media</p>
-          <img src="pics/projects/chatter.png" alt="chatter" class='project-pics'>
-        </div>
-        <div class="grid-item" data-project-id="mail">
+          <img src="pics/projects/chatter.png" alt="" class='project-pics'>
+        </button>
+        <button class="grid-item" data-project-id="mail">
           <p class='lang' key='mb0'>Mail Box</p>
-          <img src="pics/projects/mail.png" alt="portfolio" class='project-pics'>
-        </div>
-        <div class="grid-item" data-project-id="auction">
+          <img src="pics/projects/mail.png" alt="" class='project-pics'>
+        </button>
+        <button class="grid-item" data-project-id="auction">
           <p class='lang' key='auc0'>Auction Site</p>
-          <img src="pics/projects/auction.png" alt="auction" class='project-pics'>
-        </div>
-        <div class="grid-item" data-project-id="wiki">
+          <img src="pics/projects/auction.png" alt="" class='project-pics'>
+        </button>
+        <button class="grid-item" data-project-id="wiki">
           <p class='lang' key='wb0'>Wiki Beer</p>
-          <img src="pics/projects/wiki.png" alt="wiki" class='project-pics'>
-        </div>
+          <img src="pics/projects/wiki.png" alt="" class='project-pics'>
+        </button>
       </div>
-
     </section>
 
 <!-- Display individual projects -->
@@ -101,11 +106,22 @@
 
       <section id="vortext" class='display-project'>
         <h1 class='title-project lang' key='qa0'>VortexT</h1>
-        <span class="close" data-close-id="vortext">&#10005;</span>
+        <button 
+          class="close lang" 
+          data-close-id="vortext"
+          key="aria-close"
+          data-attr="aria-label"
+        >&#10005;</button>
 
         <div class="presentation">
           <div>
-            <video class='gif-display' loop autoplay muted playsinline preload="auto">
+            <video 
+              class='gif-display lang' 
+              loop autoplay muted playsinline preload="auto"
+              tabindex="0"
+              key="vid-vortext"
+              data-attr="aria-label"
+            >
               <source src="pics/projects/vortext.mp4" type="video/mp4">
             </video>
 
@@ -136,18 +152,29 @@
         </div>
 
         <!-- Next and previous buttons -->
-        <a class="prev" data-project-id="wiki">&#10094;</a>
-        <a class="next" data-project-id="scientist">&#10095;</a>
-      </section>
+        <button class="prev lang" data-project-id="wiki" data-attr="aria-label" key="aria-prev">&#10094;</button>
+        <button class="next lang" data-project-id="scientist" data-attr="aria-label" key="aria-next">&#10095;</button>      
+      </section>  
 
       <section id="scientist" class='display-project'>
         <h1 class='title-project lang' key='pro0'>Professional Profile</h1>
-        <span class="close" data-close-id="scientist">&#10005;</span>
+        <button 
+          class="close lang" 
+          data-close-id="scientist"
+          key="aria-close"
+          data-attr="aria-label"
+        >&#10005;</button>
 
         <div class="presentation">
 
           <div>
-            <video class='gif-display' loop autoplay muted playsinline preload="auto">
+            <video 
+              class='gif-display lang' 
+              loop autoplay muted playsinline preload="auto"
+              tabindex="0"              
+              key="vid-profile"
+              data-attr="aria-label"              
+            >
               <source src="pics/projects/scivid.mp4" type="video/mp4">
             </video>
 
@@ -177,19 +204,29 @@
         </div>
 
         <!-- Next and previous buttons -->
-        <a class="prev" data-project-id="vortext">&#10094;</a>
-        <a class="next" data-project-id="retrofun">&#10095;</a>
-
+        <button class="prev lang" data-project-id="vortext" data-attr="aria-label" key="aria-prev">&#10094;</button>
+        <button class="next lang" data-project-id="retrofun" data-attr="aria-label" key="aria-next">&#10095;</button>
       </section>
 
       <section id="retrofun" class='display-project'>
         <h1 class='title-project lang' key='ret0'>Retrofun Games</h1>
-        <span class="close" data-close-id="retrofun">&#10005;</span>
+        <button 
+          class="close lang" 
+          data-close-id="retrofun"
+          key="aria-close"
+          data-attr="aria-label"
+        >&#10005;</button>
 
         <div class="presentation">
 
           <div>
-            <video class='gif-display' loop autoplay muted playsinline preload="auto">
+            <video 
+              class='gif-display lang' 
+              loop autoplay muted playsinline preload="auto"
+              tabindex="0"
+              key="vid-vortext"
+              data-attr="aria-label"              
+            >
               <source src="pics/projects/retvid.mp4" type="video/mp4">
             </video>
 
@@ -219,19 +256,29 @@
         </div>
 
         <!-- Next and previous buttons -->
-        <a class="prev" data-project-id="scientist">&#10094;</a>
-        <a class="next" data-project-id="portfolio">&#10095;</a>
-
+        <button class="prev lang" data-project-id="scientist" data-attr="aria-label" key="aria-prev">&#10094;</button>
+        <button class="next lang" data-project-id="portfolio" data-attr="aria-label" key="aria-next">&#10095;</button>
       </section>
 
       <section id="portfolio" class='display-project'>
         <h1 class='title-project lang' key='por0'>My Portfolio</h1>
-        <span class="close" data-close-id="portfolio">&#10005;</span>
+        <button 
+          class="close lang" 
+          data-close-id="portfolio"
+          key="aria-close"
+          data-attr="aria-label"
+        >&#10005;</button>
 
         <div class="presentation">
 
           <div>
-            <video class='gif-display' loop autoplay muted playsinline preload="auto">
+            <video 
+              class='gif-display lang' 
+              loop autoplay muted playsinline preload="auto"
+              tabindex="0"
+              key="vid-portfolio"
+              data-attr="aria-label"              
+            >
               <source src="pics/projects/porvid.mp4" type="video/mp4">
             </video>
 
@@ -261,18 +308,28 @@
         </div>
 
         <!-- Next and previous buttons -->
-        <a class="prev" data-project-id="retrofun">&#10094;</a>
-        <a class="next" data-project-id="chatter">&#10095;</a>
-
+        <button class="prev lang" data-project-id="retrofun" data-attr="aria-label" key="aria-prev">&#10094;</button>
+        <button class="next lang" data-project-id="chatter" data-attr="aria-label" key="aria-next">&#10095;</button>
       </section>
 
       <section id="chatter" class='display-project'>
         <h1 class='title-project lang' key='sm0'>Social Media</h1>
-        <span class="close" data-close-id="chatter">&#10005;</span>
+        <button 
+          class="close lang" 
+          data-close-id="chatter"
+          key="aria-close"
+          data-attr="aria-label"
+        >&#10005;</button>
 
         <div class="presentation">
           <div>
-            <video class='gif-display' loop autoplay muted playsinline preload="auto">
+            <video 
+              class='gif-display lang' 
+              loop autoplay muted playsinline preload="auto"
+              tabindex="0"
+              key="vid-social"
+              data-attr="aria-label"              
+            >
               <source src="pics/projects/chavid.mp4" type="video/mp4">
             </video>
 
@@ -303,19 +360,29 @@
         </div>
 
         <!-- Next and previous buttons -->
-        <a class="prev" data-project-id="portfolio">&#10094;</a>
-        <a class="next" data-project-id="mail">&#10095;</a>
-
+        <button class="prev lang" data-project-id="portfolio" data-attr="aria-label" key="aria-prev">&#10094;</button>
+        <button class="next lang" data-project-id="mail" data-attr="aria-label" key="aria-next">&#10095;</button>
       </section>
 
       <section id="mail" class='display-project'>
         <h1 class='title-project lang' key='mb0'>Mail Box</h1>
-        <span class="close" data-close-id="mail">&#10005;</span>
+        <button 
+          class="close lang" 
+          data-close-id="mail"
+          key="aria-close"
+          data-attr="aria-label"
+        >&#10005;</button>
 
         <div class="presentation">
 
           <div>
-            <video class='gif-display' loop autoplay muted playsinline preload="auto">
+            <video 
+              class='gif-display lang' 
+              loop autoplay muted playsinline preload="auto"
+              tabindex="0"
+              key="vid-mail"
+              data-attr="aria-label"              
+            >
               <source src="pics/projects/maivid.mp4" type="video/mp4">
             </video>
 
@@ -346,19 +413,29 @@
         </div>
 
         <!-- Next and previous buttons -->
-        <a class="prev" data-project-id="chatter">&#10094;</a>
-        <a class="next" data-project-id="auction">&#10095;</a>
-
+        <button class="prev lang" data-project-id="chatter" data-attr="aria-label" key="aria-prev">&#10094;</button>
+        <button class="next lang" data-project-id="auction" data-attr="aria-label" key="aria-next">&#10095;</button>
       </section>
 
       <section id="auction" class='display-project'>
         <h1 class='title-project lang' key='auc0'>Auction Site</h1>
-        <span class="close" data-close-id="auction">&#10005;</span>
+        <button 
+          class="close lang" 
+          data-close-id="auction"
+          key="aria-close"
+          data-attr="aria-label"
+        >&#10005;</button>
 
         <div class="presentation">
 
           <div>
-            <video class='gif-display' loop autoplay muted playsinline preload="auto">
+            <video 
+              class='gif-display lang' 
+              loop autoplay muted playsinline preload="auto"
+              tabindex="0"
+              key="vid-auction"
+              data-attr="aria-label"              
+            >
               <source src="pics/projects/aucvid.mp4" type="video/mp4">
             </video>
 
@@ -390,20 +467,30 @@
         </div>
 
         <!-- Next and previous buttons -->
-        <a class="prev" data-project-id="mail">&#10094;</a>
-        <a class="next" data-project-id="wiki">&#10095;</a>
-
+        <button class="prev lang" data-project-id="mail" data-attr="aria-label" key="aria-prev">&#10094;</button>
+        <button class="next lang" data-project-id="wiki" data-attr="aria-label" key="aria-next">&#10095;</button>
       </section>
 
       <section id="wiki" class='display-project'>
         <h1 class='title-project lang' key='wb0'>Wiki Beer</h1>
-        <span class="close" data-close-id="wiki">&#10005;</span>
+        <button 
+          class="close lang" 
+          data-close-id="wiki"
+          key="aria-close"
+          data-attr="aria-label"
+        >&#10005;</button>
 
         <div class="presentation">
 
           <div>
 
-            <video class='gif-display' loop autoplay muted playsinline preload="auto">
+            <video 
+              class='gif-display lang' 
+              loop autoplay muted playsinline preload="auto"
+              tabindex="0"
+              key="vid-wiki"
+              data-attr="aria-label"              
+            >
               <source src="pics/projects/wikivid.mp4" type="video/mp4">
             </video>
 
@@ -435,16 +522,15 @@
         </div>
 
         <!-- Next and previous buttons -->
-        <a class="prev" data-project-id="auction">&#10094;</a>
-        <a class="next" data-project-id="vortext">&#10095;</a>
-
+        <button class="prev lang" data-project-id="auction" data-attr="aria-label" key="aria-prev">&#10094;</button>
+        <button class="next lang" data-project-id="vortext" data-attr="aria-label" key="aria-next">&#10095;</button>
       </section>
 
     </div>
 
 <!-- About section -->
 
-    <section id='about-section'>
+    <section id='about-section' tabindex="-1">
 
       <h1 class='lang' key='abo-title'>About me</h1>
 
@@ -468,12 +554,11 @@
           <img src="pics/logos/youtube.png" alt="youtube" class='youtube'>
         </a>
       </div>
-
     </section>
 
 <!-- Contact section -->
 
-    <section id='contact-section'>
+    <section id='contact-section' tabindex="-1">
 
       <h1 class='lang' key='con-title'>Contact</h1>
 
@@ -485,8 +570,16 @@
         <div id="sent-msg"></div>
         <input type="button" data-inviewport="animtxt" class="button link1" id="submit" value="Submit">
       </form>
-
     </section>
+
+    <button
+      id="back-to-nav"
+      class="back-to-nav lang"
+      key="aria-back-to-nav"
+      type="button"
+    >
+      Back to navigation
+    </button>
 
   </body>
 

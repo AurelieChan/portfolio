@@ -62,6 +62,21 @@ export const languages = {
     "wb2": "The assignment was to complete the implementation of a Wikipedia-like online encyclopedia.",
     "wb3": "This was the very first project where I used <mark>Django</mark> as the backend framework, created a basic search engine, and explored <mark>Markdown</mark> syntax. The rest of the website was built using <mark>HTML</mark> and <mark>CSS</mark>.",
 
+    // ================================= Accessibility + Video descriptions - EN
+    "aria-close": "Close this project and return to the Projects section",
+    "aria-next": "View the next project",
+    "aria-prev": "View the previous project",
+    "aria-back-to-nav": "Back to the main navigation",
+
+    "vid-vortext": "This illustrative video shows navigation through the app, including the home page, settings, private messages, notifications, and the user profile. VortexT also features a search engine, bookmarks, the ability to save drafts, and an index of all categories. The site is designed to be fully accessible.",
+    "vid-profile": "This illustrative video shows navigation through the site. All content is on a single page, and clicking items in the navigation bar automatically scrolls between sections. The background represents a southern night sky, with twinkling stars and occasional shooting stars.",
+    "vid-retrofun": "This illustrative video shows the three games I built: a memory game where you match pairs of cards, a single‑player Pong‑inspired game with four paddles that catch as many balls as possible, and a logic game where you clear all colored tiles. Tiles can be cleared only when adjacent to another of the same color, and clearing larger groups yields more points.",
+    "vid-portfolio": "This illustrative video shows my portfolio website, the one you are viewing now, including the rotating full moon visible on the home page.",
+    "vid-social": "This illustrative video shows key features: following users, liking and commenting on posts, and viewing a feed of followed users. You can also publish your own posts, see them on a dedicated page, and choose between classic pagination and infinite scrolling.",
+    "vid-mail": "This illustrative video shows how to view your inbox, mark emails as read or unread, archive and reply to messages. You can also delete emails, view sent mail, and switch the visual theme. I created three themes inspired by personal photographs taken in Babelsberg Park, Potsdam.",
+    "vid-auction": "This illustrative video shows how to browse products by category, place bids, and comment on listings. You can also view all active listings, create a new listing, add items to a watchlist, and review auctions you have won.",
+    "vid-wiki": "This illustrative video shows how to navigate the site from the home page and use the search engine. You can also create your own wiki entries, edit them, and open random pages. This wiki was created around the theme of German beers.",
+    
     // ============================================================== About - EN
     "abo-title": "About me",
 
@@ -142,6 +157,21 @@ export const languages = {
     "wb1": "Dieses Projekt ist eine Übung für den Online-Kurs CS50W, der von der Harvard University angeboten wird.",
     "wb2": "Die Aufgabe bestand darin, die Implementierung einer Wikipedia-ähnlichen Online-Enzyklopädie abzuschließen.",
     "wb3": "Dies war das allererste Projekt, bei dem ich <mark>Django</mark> als Backend-Framework verwendet, eine einfache Suchmaschine erstellt und die <mark>Markdown-Syntax</mark> erkundet habe. Der Rest der Website wurde mit <mark>HTML</mark> und <mark>CSS</mark> erstellt.",
+
+    // ====================================== Barrierefreiheit + Videobeschreibungen - DE
+    "aria-close": "Dieses Projekt schließen und zum Bereich „Projekte“ zurückkehren",
+    "aria-next": "Nächstes Projekt anzeigen",
+    "aria-prev": "Vorheriges Projekt anzeigen",
+    "aria-back-to-nav": "Zur Hauptnavigation zurückkehren",
+
+    "vid-vortext": "Dieses illustrative Video zeigt die Navigation durch die App, einschließlich Startseite, Einstellungen, privaten Nachrichten, Benachrichtigungen und Benutzerprofil. VortexT bietet außerdem eine Suchfunktion, Lesezeichen, das Speichern von Entwürfen und ein Kategorienverzeichnis. Die Website ist auf vollständige Barrierefreiheit ausgelegt.",
+    "vid-profile": "Dieses illustrative Video zeigt die Navigation durch die Website. Der gesamte Inhalt befindet sich auf einer einzigen Seite; ein Klick auf die Elemente der Navigationsleiste scrollt automatisch zwischen den Abschnitten. Der Hintergrund zeigt einen südlichen Nachthimmel mit funkelnden Sternen und gelegentlichen Sternschnuppen.",
+    "vid-retrofun": "Dieses illustrative Video zeigt drei von mir erstellte Spiele: ein Memory-Spiel zum Finden gleicher Kartenpaare, ein Pong‑ähnliches Einzelspieler‑Spiel mit vier Schlägern zum Fangen möglichst vieler Bälle sowie ein Logikspiel, bei dem alle farbigen Kacheln entfernt werden müssen—Kacheln können nur entfernt werden, wenn sie an eine gleichfarbige Kachel angrenzen; größere Gruppen bringen mehr Punkte.",
+    "vid-portfolio": "Dieses illustrative Video zeigt meine Portfolio‑Website, die Sie gerade betrachten, einschließlich des sich drehenden Vollmondes auf der Startseite.",
+    "vid-social": "Dieses illustrative Video zeigt zentrale Funktionen: anderen Nutzern folgen, Beiträge liken und kommentieren sowie den Feed der gefolgten Nutzer ansehen. Eigene Beiträge können veröffentlicht, auf einer eigenen Seite angezeigt und wahlweise mit klassischer Paginierung oder Endlos‑Scrollen betrachtet werden.",
+    "vid-mail": "Dieses illustrative Video zeigt, wie man den Posteingang anzeigt, E‑Mails als gelesen oder ungelesen markiert, archiviert und beantwortet. Außerdem kann man E‑Mails löschen, gesendete Nachrichten ansehen und das visuelle Design ändern. Ich habe drei Designs auf Basis eigener Fotos aus dem Park Babelsberg in Potsdam erstellt.",
+    "vid-auction": "Dieses illustrative Video zeigt, wie man Produkte nach Kategorien durchsucht, Gebote abgibt und Einträge kommentiert. Außerdem kann man alle aktiven Angebote ansehen, neue Einträge erstellen, Artikel zur Beobachtungsliste hinzufügen und die gewonnenen Auktionen einsehen.",
+    "vid-wiki": "Dieses illustrative Video zeigt die Navigation von der Startseite aus und die Nutzung der Suchfunktion. Man kann eigene Wiki‑Einträge erstellen, bearbeiten und zufällige Seiten öffnen. Dieses Wiki behandelt das Thema deutsche Biere.",
 
     // ============================================================== About - DE
     "abo-title": "Über mich",
@@ -224,6 +254,21 @@ export const languages = {
     "wb2": "L'exigence était de compléter l'implémentation d'une encyclopédie en ligne de type Wikipedia.",
     "wb3": "C'est le tout premier projet pour lequel j'ai utilisé <mark>Django</mark> comme framework backend, créé un moteur de recherche basique et exploré la syntaxe <mark>Markdown</mark>. Le reste du site a été construit en <mark>HTML</mark> et <mark>CSS</mark>.",
 
+    // ================================= Accessibilité + Descriptions vidéo - FR
+    "aria-close": "Fermer ce projet et revenir à la section Projets",
+    "aria-next": "Voir le projet suivant",
+    "aria-prev": "Voir le projet précédent",
+    "aria-back-to-nav": "Revenir à la navigation principale",
+
+    "vid-vortext": "Cette vidéo illustrative montre la navigation dans l’application : page d’accueil, paramètres, messagerie privée, notifications et page de profil. VortexT propose aussi un moteur de recherche, un système de marque‑pages, l’enregistrement de brouillons et un index des catégories. Le site est conçu pour être entièrement accessible.",
+    "vid-profile": "Cette vidéo illustrative montre la navigation sur le site. Tout le contenu se trouve sur une seule page et cliquer sur les éléments de la barre de navigation fait défiler automatiquement les sections. L’arrière‑plan représente un ciel nocturne austral avec des étoiles scintillantes et, parfois, une étoile filante.",
+    "vid-retrofun": "Cette vidéo illustrative montre les trois jeux que j’ai créés : un jeu de mémoire où il faut associer des paires de cartes, un jeu inspiré de Pong adapté pour un seul joueur avec quatre raquettes pour attraper un maximum de balles, et un jeu de logique où il faut éliminer toutes les cases colorées—on ne peut supprimer des cases que lorsqu’elles sont adjacentes à une autre de même couleur, et de grands groupes rapportent plus de points.",
+    "vid-portfolio": "Cette vidéo illustrative montre mon site portfolio, celui que vous consultez actuellement, avec la pleine lune en rotation visible sur la page d’accueil.",
+    "vid-social": "Cette vidéo illustrative montre différentes fonctionnalités : suivre un utilisateur, aimer et commenter des publications, et consulter le fil des personnes suivies. On peut aussi publier ses propres messages, les retrouver sur une page dédiée, et choisir entre une pagination classique et un défilement infini.",
+    "vid-mail": "Cette vidéo illustrative montre comment afficher la liste des courriels, les marquer comme lus ou non lus, les archiver et répondre. Il est également possible de supprimer des courriels, de voir les messages envoyés et de changer de thème visuel. J’ai créé trois thèmes inspirés de photos personnelles prises au parc de Babelsberg, à Potsdam.",
+    "vid-auction": "Cette vidéo illustrative montre comment rechercher des produits par catégorie, enchérir et commenter un article. On peut aussi voir la liste de tous les articles en vente, créer une annonce, ajouter un article à une liste de surveillance et consulter les enchères remportées.",
+    "vid-wiki": "Cette vidéo illustrative montre comment naviguer à partir de la page d’accueil et utiliser le moteur de recherche. On peut aussi créer sa propre entrée, la modifier et afficher des pages au hasard. J’ai créé ce wiki sur le thème des bières allemandes.",
+    
     // ============================================================== About - FR
     "abo-title": "À propos de moi",
 
