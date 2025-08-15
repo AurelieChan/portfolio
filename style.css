@@ -310,8 +310,6 @@ section {
   width: 80%;
   max-width: 750px;
   height: auto;
-  max-height: 80%;
-
   overflow: auto;
 
   background: rgba(37, 37, 31, 0.65);
@@ -331,14 +329,19 @@ h1 {
   font-family: 'Moirai One', cursive;
   font-size: 40px;
   margin-top: 25px;
-  color:#fae0b8;
-  text-shadow: 0px 1px 0px #fde9ec, 0 4px 8px #f74a8f;
+  color:#f9ecd7;
+  text-shadow: 0 4px 8px #f74a8f;
 
   width: auto;
   max-width: 0%;
   white-space: nowrap;
   overflow: hidden;
 
+  /* animation: title 4s ease;
+  animation-fill-mode: forwards; */
+}
+
+h1.animate-title {
   animation: title 4s ease;
   animation-fill-mode: forwards;
 }
@@ -582,6 +585,7 @@ textarea:focus, video:focus {
 }
 
 /* +++++++++++++++++++++++++++++++++ Contact ++++++++++++++++++++++++++++++++ */
+
 input, textarea {
   width: 100%;
   padding: 10px;
@@ -756,6 +760,7 @@ input:hover, textarea:hover, input:focus, textarea:focus {
     border-radius: 7px;
     margin-top: 5px;
     margin-bottom: 5px;
+    font-size: 16px !important;
   }
 
   #message {
@@ -818,6 +823,7 @@ input:hover, textarea:hover, input:focus, textarea:focus {
     border-radius: 5px;
     margin-top: 3px;
     margin-bottom: 3px;
+    font-size: 16px !important;
   }
 
   #message {
@@ -905,10 +911,22 @@ input:hover, textarea:hover, input:focus, textarea:focus {
     padding-left: 0;
   }
 
+  #projects-section,
+  #about-section,
+  .display-project {
+    height: 80vh !important;
+    overflow-y: auto;
+  }
+
+  section,
+  .display-project {
+    box-sizing: border-box;
+  }
+
+
   .display-project {
     max-width: auto;
     width: auto;
-    height: 65vh;
     padding: 0px 30px 10px 30px;
   }
 
@@ -994,7 +1012,7 @@ input:hover, textarea:hover, input:focus, textarea:focus {
   section {
     padding-left: 20px;
     padding-right: 20px;
-    width: 80%;
+    width: 90%;
     font-size: 0.9em;
   }
 
@@ -1025,6 +1043,7 @@ input:hover, textarea:hover, input:focus, textarea:focus {
 
   .see-btns > a, .links > a {
     padding: 7px;
+    font-size: 0.9em;;
   }
 
   /* ++++ About ++++ */
@@ -1038,6 +1057,7 @@ input:hover, textarea:hover, input:focus, textarea:focus {
     border-radius: 7px;
     margin-top: 5px;
     margin-bottom: 5px;
+    font-size: 16px !important;
   }
 
   #message {
@@ -1045,7 +1065,6 @@ input:hover, textarea:hover, input:focus, textarea:focus {
   }
 
   .button {
-    font-size: 0.9em;
     padding: 6px;
     border-radius: 7px;
     margin-bottom: 15px;

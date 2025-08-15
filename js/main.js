@@ -99,6 +99,8 @@ function onResize() {
   renderer.setSize(window.innerWidth, window.innerHeight)
   camera.aspect = window.innerWidth / window.innerHeight
   camera.updateProjectionMatrix()
+
+  renderer.render(scene, camera);
 }
 
 // ==================== Check position of the mouse in homepage to change cursor
@@ -322,6 +324,7 @@ function detectPosition() {
 
   // Display PROJECT section
   if (camera.position.x < 9 && camera.position.x > -9 && camera.position.z > 25) {
+    AnimTitles('projects-section');
     document.querySelector('#projects-section').classList.add('section-fade-in');
     document.querySelector('#projects').classList.add('active');
 
@@ -338,6 +341,7 @@ function detectPosition() {
 
   // Display ABOUT section
   if (camera.position.x < -19 && camera.position.x > -29 && camera.position.z < -3 && camera.position.z > -22) {
+    AnimTitles('about-section');
     document.querySelector('#about-section').classList.add('section-fade-in');
     document.querySelector('#about').classList.add('active');
 
@@ -350,6 +354,7 @@ function detectPosition() {
 
   // Display CONTACT section
   if (camera.position.x < 30 && camera.position.x > 16 && camera.position.z < -4 && camera.position.z > -25) {
+    AnimTitles('contact-section');
     document.querySelector('#contact-section').classList.add('section-fade-in');
     document.querySelector('#contact').classList.add('active');
 
@@ -358,6 +363,16 @@ function detectPosition() {
   else {
     document.querySelector('#contact-section').classList.remove('section-fade-in');
     document.querySelector('#contact').classList.remove('active');
+  }
+}
+
+// Animate titles 
+export function AnimTitles(sectionId) {
+  const title = document.querySelector(`#${sectionId} h1`);
+  if (title) {
+    title.classList.remove('animate-title');
+    void title.offsetWidth; // force reflow
+    title.classList.add('animate-title');
   }
 }
 

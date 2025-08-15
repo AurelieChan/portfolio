@@ -1,4 +1,5 @@
 import { languages, contactPlaceholder } from './languages.js';
+import { AnimTitles } from './main.js';
 
 // ============================================================= Event listeners
 document.addEventListener('DOMContentLoaded', () => {
@@ -110,10 +111,11 @@ function details(projectId) {
   projectElement.dataset.openToken = myToken;
 
   // === Reveal immediately (optimistic)
-  projectElement.style.display = "block";
+  projectElement.style.display = "block"; 
   if (overlay) overlay.style.display = "block";
   projectElement.setAttribute('tabindex', '-1');
   requestAnimationFrame(() => projectElement.focus());
+  AnimTitles(projectId);
 
   // Handle video loading if needed
   if (videoElement) {
@@ -167,6 +169,7 @@ function closeDetails(projectId) {
   const projectsSection = document.querySelector('#projects-section');
   if (projectsSection) {
     projectsSection.classList.add('section-fade-in');
+    AnimTitles('projects-section')
     projectsSection.style.opacity = 1;
     projectsSection.focus();
   }
