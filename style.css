@@ -304,7 +304,7 @@ section {
   padding-bottom: 15px;
 
   position: absolute;
-  top: 53%;
+  top: calc(50% + 25px);
   left: 50%;
   transform: translate(-50%, -50%);
   width: 80%;
@@ -336,9 +336,6 @@ h1 {
   max-width: 0%;
   white-space: nowrap;
   overflow: hidden;
-
-  /* animation: title 4s ease;
-  animation-fill-mode: forwards; */
 }
 
 h1.animate-title {
@@ -914,7 +911,7 @@ input:hover, textarea:hover, input:focus, textarea:focus {
   #projects-section,
   #about-section,
   .display-project {
-    height: 80vh !important;
+    height: 74vh !important;
     overflow-y: auto;
   }
 
