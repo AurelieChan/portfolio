@@ -169,9 +169,12 @@ function closeDetails(projectId) {
   const projectsSection = document.querySelector('#projects-section');
   if (projectsSection) {
     projectsSection.classList.add('section-fade-in');
-    AnimTitles('projects-section')
+    // AnimTitles('projects-section')
     projectsSection.style.opacity = 1;
     projectsSection.focus();
+    setTimeout(() => {
+      AnimTitles('projects-section');
+    }, 30);
   }
 }
 
