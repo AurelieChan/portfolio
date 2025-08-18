@@ -6,8 +6,8 @@ export const languages = {
     "nb2": "Projects",
     "nb3": "About me",
     "nb4": "Contact",
-    "dev": "I'm a full stack developer",
-    "des": "with some design skills.",
+    "dev": "Full stack developer",
+    "des": "with a creative edge.",
 
     // =========================================================== Projects - EN
     "pro-title": "Projects",
@@ -105,8 +105,8 @@ export const languages = {
     "nb2": "Projekte",
     "nb3": "Über mich",
     "nb4": "Kontakt",
-    "dev": "Ich bin ein Full-Stack-Entwicklerin",
-    "des": "mit einigen Design-Fähigkeiten.",
+    "dev": "Full-Stack-Entwicklerin",
+    "des": "mit einer kreativen Note.",
 
     // =========================================================== Projects - DE
     "pro-title": "Projekte",
@@ -204,8 +204,8 @@ export const languages = {
     "nb2": "Projets",
     "nb3": "À propos",
     "nb4": "Contact",
-    "dev": "Je suis développeuse full stack",
-    "des": "avec quelques compétences en design.",
+    "dev": "Développeuse full stack",
+    "des": "avec une touche créative.",
 
     // =========================================================== Projects - FR
     "pro-title": "Projets",
