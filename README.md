@@ -36,8 +36,6 @@ Run `npx vite build` to build the folder that is used in production.
 
 This command compiles your application into static files optimized for production deployment.
 
+## Test the final built version
 
-
-
-
-
+Run `npx serve dist` to test the built version that will be used in production.
