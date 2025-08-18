@@ -40,6 +40,12 @@ document.addEventListener('DOMContentLoaded', () => {
       selectLanguage('en');
   }
 
+  // Set the language field in the contact form
+  const langInput = document.getElementById('lang');
+  if (langInput) {
+      langInput.value = subdomain;
+  }
+
   // Submit contact form
   const submitButton = document.getElementById('submit');
   if (submitButton) {
@@ -220,7 +226,9 @@ export function selectLanguage(lang) {
 // ================================================================ Contact form
 function submitForm() {
 
-  var lang = localStorage.getItem('lang') || navigator.language.slice(0, 2);
+  const lang = getSubdomain() || 'en';
+  document.getElementById('lang').value = lang; 
+
   var errorMsgName = languages[lang]["errorName"];
   var errorMsgEmail = languages[lang]["errorEmail"];
   var errorMsgMessage = languages[lang]["errorMessage"];
@@ -252,7 +260,8 @@ function submitForm() {
       'name=' + (name) +
       '&company=' + encodeURIComponent(company) +
       '&email=' + encodeURIComponent(email) +
-      '&message=' + encodeURIComponent(message)
+      '&message=' + encodeURIComponent(message) +
+      '&lang=' + encodeURIComponent(lang)
     )
 
     http.onreadystatechange = function() {
