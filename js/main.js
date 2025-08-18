@@ -417,7 +417,7 @@ document.getElementById('home').addEventListener('click', function(e) {
     document.querySelector('.bottom').style.display = 'block';
     document.querySelector('.bottom').classList.add('from-right');
 
-    document.querySelector('.flags').style.display = 'block';
+    document.querySelector('.flags').style.display = 'flex';
     document.querySelector('.flags').classList.add('flags-fade');
   }, '1600');
 
