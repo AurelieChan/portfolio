@@ -167,7 +167,7 @@ span.fade {
 
 /* +++++ Home page bottom +++++ */
 .intro {
-  font-size: clamp(27px, 2vw, 35px);
+  font-size: 30px;
   text-align: center;
   width: 100%;
   position: absolute;
@@ -188,7 +188,7 @@ span.fade {
 }
 
 .top {
-  bottom: 18%;
+  bottom: 19%;
 }
 
 .from-left {
@@ -234,10 +234,10 @@ span.fade {
   left: 50%;
   transform: translateX(-50%);
   position: absolute;
-  width: 515px;
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 10rem;
 }
 
 .flag-button {
@@ -270,14 +270,6 @@ span.fade {
   box-shadow: 1px 1px 35px 5px #fc92a4;
   outline-offset: -1px;
   border-radius: 100%;
-}
-
-.germany {
-  margin: 0 165px;
-}
-
-.uk {
-  margin-left: 25px;
 }
 
 /* ================================================================= Sections */
@@ -721,20 +713,10 @@ input:hover, textarea:hover, input:focus, textarea:focus {
 
   .flags {
     bottom: 7px;
-    width: 370px;
   }
 
   .flag-button img {
     width: 30px;
-  }
-
-  .germany {
-    margin-right: 115px;
-    margin-left: 115px;
-  }
-
-  .uk {
-    margin-left: 16px;
   }
 
   /* ++++ Section ++++ */
@@ -785,17 +767,8 @@ input:hover, textarea:hover, input:focus, textarea:focus {
     font-size: 0.6em;
   }
 
-  .flags {
-    width: 300px;
-  }
-
   .flag-button img {
     width: 25px;
-  }
-
-  .germany {
-    margin-right: 90px;
-    margin-left: 90px;
   }
 
   /* ++++ Section ++++ */
@@ -954,15 +927,6 @@ input:hover, textarea:hover, input:focus, textarea:focus {
   }
 }
 
-/* ======================================================== MEDIA QUERIES 665 */
-@media only screen and (max-width: 665px) {
-
-  .intro {
-    font-size: 22px;
-  }
-
-}
-
 /* ======================================================== MEDIA QUERIES 580 */
 @media only screen and (max-width: 580px) {
 
@@ -976,27 +940,15 @@ input:hover, textarea:hover, input:focus, textarea:focus {
   }
 
   .intro {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .flags {
-    left: 50%;
-    transform: translateX(-50%);
-    position: absolute;
-    width: 300px;
+    gap: 7rem;
   }
 
   .flag-button img {
     width: 30px;
-  }
-
-  .germany {
-    margin-right: 80px;
-    margin-left: 80px;
-  }
-
-  .uk {
-    margin-left: 16px;
   }
 
   /* ++++ Section ++++ */
@@ -1069,26 +1021,6 @@ input:hover, textarea:hover, input:focus, textarea:focus {
 
 }
 
-/* ======================================================== MEDIA QUERIES 500 */
-@media only screen and (max-width: 500px) {
-
-  .title-project {
-    font-size: 24px;
-  }
-
-  .intro {
-    font-size: 15px;
-  }
-
-  nav button {
-    height: 28px;
-  }
-
-  .active::after, nav button::after {
-    top: 28px;
-  }
-}
-
 /* ======================================================== MEDIA QUERIES 380 */
 
 @media only screen and (max-width: 380px) {
@@ -1107,7 +1039,7 @@ input:hover, textarea:hover, input:focus, textarea:focus {
   }
 
   .intro {
-    font-size: 13px;
+    font-size: 16px;
   }
 
   /* ++++ Projects ++++ */
