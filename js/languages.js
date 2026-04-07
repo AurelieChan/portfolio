@@ -16,6 +16,8 @@ export const languages = {
     "btn1": "See site",
     "btn2": "See video",
     "btn3": "See code",
+    "btn4": "Google Play",
+    "btn5": "Apple App Store",
 
     // Vortext
     "qa0": "VortexT",
@@ -39,6 +41,21 @@ export const languages = {
     "por1": "This is the third website I published, in 2023.",
     "por2": "On this project I used <mark>HTML</mark>, <mark>CSS</mark>, <mark>Vanilla Javascript</mark>, <mark>ThreeJS</mark> to create the 3D animation, and <mark>PHP</mark> to handle the contact form. I built <mark>JSON dictionaries</mark> to make the site dynamically trilingual.",
     "por3": "This is my very first website using <mark>ThreeJS</mark>. I really had fun with this library and I am planning to explore it further. The concept was to create an immersive experience, similar to the aesthetics of video games.",
+
+    // Coolapse
+    "cool0": "Coolapse",
+    "cool1": "Clear the grid by collapsing groups of matching blocks.",
+    "cool2": "Plan your moves carefully, trigger massive chain reactions, and chase the highest score.",
+    "cool3": "A relaxing puzzle you can play for minutes or hours. Compete against your own best score and keep improving.",
+    "cool4": "Coolapse is a minimalist puzzle game where every move matters. The larger the group of blocks you remove, the more points you earn.",
+    "cool5": "Think ahead, avoid leaving single blocks, and try to clear the entire board. Earn boosters, beat your record, and discover how high your score can go.",
+
+    // Connext
+    "conx0": "Connext",
+    "conx1": "Connext is a calm puzzle game that challenges creativity and logic.",
+    "conx2": "Rotate pipes and create a complete connection from the left side of the grid to the right.",
+    "conx3": "Only perfectly sealed networks allow water to flow.",
+    "conx4": "Soon available in Apple App Store and Google Play Store.",
     
     // Social Media
     "sm0": "Social Media",
@@ -79,6 +96,8 @@ export const languages = {
     "vid-mail": "This illustrative video shows how to view your inbox, mark emails as read or unread, archive and reply to messages. You can also delete emails, view sent mail, and switch the visual theme. I created three themes inspired by personal photographs taken in Babelsberg Park, Potsdam.",
     "vid-auction": "This illustrative video shows how to browse products by category, place bids, and comment on listings. You can also view all active listings, create a new listing, add items to a watchlist, and review auctions you have won.",
     "vid-wiki": "This illustrative video shows how to navigate the site from the home page and use the search engine. You can also create your own wiki entries, edit them, and open random pages. This wiki was created around the theme of German beers.",
+    "img-coolapse": "Illustration of Coolapse gameplay.",
+    "img-connext": "Illustration of Connext gameplay.",
     
     // ============================================================== About - EN
     "abo-title": "About me",
@@ -115,6 +134,8 @@ export const languages = {
     "btn1": "Siehe Website",
     "btn2": "Siehe Video",
     "btn3": "Siehe Code",
+    "btn4": "Google Play",
+    "btn5": "Apple App Store",
 
     // VortexT
     "qa0": "VortexT",
@@ -138,6 +159,21 @@ export const languages = {
     "por1": "Das ist die dritte Website, die ich veröffentlicht habe, im Jahr 2023.",
     "por2": "Bei diesem Projekt habe ich <mark>HTML</mark>, <mark>CSS</mark>, <mark>Vanilla Javascript</mark>, <mark>ThreeJS</mark> zur Erstellung der 3D-Animation und <mark>PHP</mark> für das Kontaktformular verwendet. Ich habe <mark>JSON</mark>-Wörterbücher erstellt, um die Website dynamisch dreisprachig zu machen.",
     "por3": "Dies ist meine allererste Website, die <mark>ThreeJS</mark> verwendet. Ich hatte viel Spaß mit dieser Bibliothek und plane, sie weiter zu erforschen. Das Konzept bestand darin, ein immersives Erlebnis zu schaffen, ähnlich der Ästhetik von Videospielen.",
+
+    // Coolapse
+    "cool0": "Coolapse",
+    "cool1": "Räumen Sie das Spielfeld, indem Sie Gruppen passender Blöcke auflösen.",
+    "cool2": "Planen Sie Ihre Züge sorgfältig, lösen Sie gewaltige Kettenreaktionen aus und jagen Sie dem höchsten Punktestand nach.",
+    "cool3": "Ein entspannendes Puzzlespiel, das Sie für ein paar Minuten oder stundenlang spielen können. Treten Sie gegen Ihren eigenen Bestwert an und verbessern Sie sich immer weiter.",
+    "cool4": "Coolapse ist ein minimalistisches Puzzlespiel, bei dem jeder Zug zählt. Je größer die Blockgruppe ist, die Sie entfernen, desto mehr Punkte erhalten Sie.",
+    "cool5": "Denken Sie voraus, vermeiden Sie einzelne übrig gebliebene Blöcke und versuchen Sie, das gesamte Spielfeld zu leeren. Verdienen Sie Booster, schlagen Sie Ihren Rekord und entdecken Sie, wie hoch Ihr Punktestand werden kann.",
+
+    // Connext
+    "conx0": "Connext",
+    "conx1": "Connext ist ein ruhiges Puzzlespiel, das Kreativität und Logik herausfordert.",
+    "conx2": "Drehen Sie die Rohre und erstellen Sie eine vollständige Verbindung von der linken Seite des Gitters bis zur rechten.",
+    "conx3": "Nur perfekt abgedichtete Netzwerke lassen Wasser fließen.",
+    "conx4": "Bald im Apple App Store und im Google Play Store verfügbar.",
     
     // Social Media
     "sm0": "Soziale Medien",
@@ -178,6 +214,8 @@ export const languages = {
     "vid-mail": "Dieses illustrative Video zeigt, wie man den Posteingang anzeigt, E‑Mails als gelesen oder ungelesen markiert, archiviert und beantwortet. Außerdem kann man E‑Mails löschen, gesendete Nachrichten ansehen und das visuelle Design ändern. Ich habe drei Designs auf Basis eigener Fotos aus dem Park Babelsberg in Potsdam erstellt.",
     "vid-auction": "Dieses illustrative Video zeigt, wie man Produkte nach Kategorien durchsucht, Gebote abgibt und Einträge kommentiert. Außerdem kann man alle aktiven Angebote ansehen, neue Einträge erstellen, Artikel zur Beobachtungsliste hinzufügen und die gewonnenen Auktionen einsehen.",
     "vid-wiki": "Dieses illustrative Video zeigt die Navigation von der Startseite aus und die Nutzung der Suchfunktion. Man kann eigene Wiki‑Einträge erstellen, bearbeiten und zufällige Seiten öffnen. Dieses Wiki behandelt das Thema deutsche Biere.",
+    "img-coolapse": "Illustration des Coolapse-Spielablaufs.",
+    "img-connext": "Illustration des Connext-Spielablaufs.",
 
     // ============================================================== About - DE
     "abo-title": "Über mich",
@@ -214,6 +252,8 @@ export const languages = {
     "btn1": "Voir le site",
     "btn2": "Voir la vidéo",
     "btn3": "Voir le code",
+    "btn4": "Google Play",
+    "btn5": "Apple App Store",
 
     // VortexT
     "qa0": "VortexT",
@@ -237,6 +277,21 @@ export const languages = {
     "por1": "C’est le troisième site web que j’ai publié, en 2023.",
     "por2": "Pour ce projet, j'ai utilisé <mark>HTML</mark>, <mark>CSS</mark>, <mark>Vanilla Javascript</mark>, <mark>ThreeJS</mark> pour créer l'animation 3D, et <mark>PHP</mark> pour gérer le formulaire de contact. J'ai construit des dictionnaires <mark>JSON</mark> pour rendre le site dynamiquement trilingue.",
     "por3": "Il s'agit de mon tout premier site web utilisant <mark>ThreeJS</mark>. Je me suis vraiment amusée avec cette bibliothèque et j'ai l'intention de l'explorer davantage. Le concept était de donner une expérience immersive, similaire à l'esthétisme des jeux vidéo.",
+
+    // Coolapse
+    "cool0": "Coolapse",
+    "cool1": "Effacez la grille en faisant disparaître des groupes de blocs identiques.",
+    "cool2": "Planifiez vos coups avec soin, déclenchez d’énormes réactions en chaîne et visez le meilleur score.",
+    "cool3": "Un puzzle relaxant auquel vous pouvez jouer quelques minutes ou pendant des heures. Affrontez votre propre meilleur score et continuez à progresser.",
+    "cool4": "Coolapse est un jeu de réflexion minimaliste où chaque mouvement compte. Plus le groupe de blocs supprimé est grand, plus vous gagnez de points.",
+    "cool5": "Réfléchissez à l’avance, évitez de laisser des blocs isolés et essayez de vider tout le plateau. Gagnez des boosters, battez votre record et découvrez jusqu’où votre score peut monter.",
+
+    // Connext
+    "conx0": "Connext",
+    "conx1": "Connext est un jeu de réflexion apaisant qui met à l’épreuve la créativité et la logique.",
+    "conx2": "Faites pivoter les tuyaux et créez une connexion complète entre le côté gauche de la grille et le côté droit.",
+    "conx3": "Seuls les réseaux parfaitement étanches permettent à l’eau de circuler.",
+    "conx4": "Bientôt disponible sur l’Apple App Store et le Google Play Store.",
     
     // Social Media
     "sm0": "Médias sociaux",
@@ -277,6 +332,8 @@ export const languages = {
     "vid-mail": "Cette vidéo illustrative montre comment afficher la liste des courriels, les marquer comme lus ou non lus, les archiver et répondre. Il est également possible de supprimer des courriels, de voir les messages envoyés et de changer de thème visuel. J’ai créé trois thèmes inspirés de photos personnelles prises au parc de Babelsberg, à Potsdam.",
     "vid-auction": "Cette vidéo illustrative montre comment rechercher des produits par catégorie, enchérir et commenter un article. On peut aussi voir la liste de tous les articles en vente, créer une annonce, ajouter un article à une liste de surveillance et consulter les enchères remportées.",
     "vid-wiki": "Cette vidéo illustrative montre comment naviguer à partir de la page d’accueil et utiliser le moteur de recherche. On peut aussi créer sa propre entrée, la modifier et afficher des pages au hasard. J’ai créé ce wiki sur le thème des bières allemandes.",
+    "img-coolapse": "Illustration du gameplay de Coolapse.",
+    "img-connext": "Illustration du gameplay de Connext.",
     
     // ============================================================== About - FR
     "abo-title": "À propos de moi",
