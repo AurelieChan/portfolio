@@ -251,10 +251,11 @@ function submitForm() {
     var email = document.querySelector("#email").value;
     var message = document.querySelector("#message").value;
 
-    var http = new XMLHttpRequest()
+    var http = new XMLHttpRequest();
+    var contactEndpoint = new URL('/php/index.php', window.location.origin).href;
 
-    http.open("POST", "https://aureliechan.de/php/index.php", true);
-    http.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
+    http.open("POST", contactEndpoint, true);
+    http.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
     http.send(
       'name=' + (name) +
@@ -265,19 +266,28 @@ function submitForm() {
     )
 
     http.onreadystatechange = function() {
-      // Show message from backend
-      document.querySelector('#sent-msg').textContent = http.responseText;
-      document.querySelector('#sent-msg').style.display = 'block';
-
-      if(http.readyState == 4 && http.status == 200) { // if sent successfully
-        document.querySelector('#sent-msg').style.color = "#b4ffe7"; // green color
-
-        setTimeout(() => { // reset form and message
-          document.querySelector('#contact-form').reset();
-          document.querySelector('#sent-msg').style.display = 'none';
-        }, 5000);
-
+      if (http.readyState !== 4) {
+        return;
       }
-    }
+
+      const sentMsg = document.querySelector('#sent-msg');
+      sentMsg.textContent = http.responseText || 'Your message could not be sent right now.';
+      sentMsg.style.display = 'block';
+      sentMsg.style.color = http.status === 200 ? "#b4ffe7" : "#ffe6e8";
+
+      if (http.status === 200) {
+        setTimeout(() => {
+          document.querySelector('#contact-form').reset();
+          sentMsg.style.display = 'none';
+        }, 5000);
+      }
+    };
+
+    http.onerror = function() {
+      const sentMsg = document.querySelector('#sent-msg');
+      sentMsg.textContent = 'Your message could not be sent right now.';
+      sentMsg.style.display = 'block';
+      sentMsg.style.color = "#ffe6e8";
+    };
   }
 }

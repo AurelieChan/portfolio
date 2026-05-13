@@ -55,7 +55,7 @@ export const languages = {
     "conx1": "Connext is a calm puzzle game that challenges creativity and logic.",
     "conx2": "Rotate pipes and create a complete connection from the left side of the grid to the right.",
     "conx3": "Only perfectly sealed networks allow water to flow.",
-    "conx4": "Soon available in Apple App Store and Google Play Store.",
+    "conx4": "Available on Apple App Store and Google Play Store.",
     
     // Social Media
     "sm0": "Social Media",
@@ -173,7 +173,7 @@ export const languages = {
     "conx1": "Connext ist ein ruhiges Puzzlespiel, das Kreativität und Logik herausfordert.",
     "conx2": "Drehen Sie die Rohre und erstellen Sie eine vollständige Verbindung von der linken Seite des Gitters bis zur rechten.",
     "conx3": "Nur perfekt abgedichtete Netzwerke lassen Wasser fließen.",
-    "conx4": "Bald im Apple App Store und im Google Play Store verfügbar.",
+    "conx4": "Im Apple App Store und im Google Play Store verfügbar.",
     
     // Social Media
     "sm0": "Soziale Medien",
@@ -291,7 +291,7 @@ export const languages = {
     "conx1": "Connext est un jeu de réflexion apaisant qui met à l’épreuve la créativité et la logique.",
     "conx2": "Faites pivoter les tuyaux et créez une connexion complète entre le côté gauche de la grille et le côté droit.",
     "conx3": "Seuls les réseaux parfaitement étanches permettent à l’eau de circuler.",
-    "conx4": "Bientôt disponible sur l’Apple App Store et le Google Play Store.",
+    "conx4": "Disponible sur l’Apple App Store et le Google Play Store.",
     
     // Social Media
     "sm0": "Médias sociaux",
