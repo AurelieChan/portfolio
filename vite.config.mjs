@@ -3,8 +3,12 @@ import { viteStaticCopy } from 'vite-plugin-static-copy';
 import fs from 'node:fs';
 import path from 'node:path';
 
-const copyTargets = [{ src: 'app-ads.txt', dest: '.' }];
+const copyTargets = [];
 const includePhp = process.env.INCLUDE_PHP === 'true';
+
+if (fs.existsSync(path.resolve('app-ads.txt'))) {
+  copyTargets.push({ src: 'app-ads.txt', dest: '.' });
+}
 
 // Copy PHP only when explicitly requested so normal frontend deploys
 // do not overwrite production-side mailer changes.
